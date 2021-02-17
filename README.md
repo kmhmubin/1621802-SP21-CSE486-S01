@@ -1,33 +1,21 @@
-# 1234567_FA2020_CSE486.1
-Sample Repository for all work in CSE486.1
-Clone this repository, rename it, make it private, create folder structure.
+# 1621802-SP21-CSE486-S01
+This is the repository for instructor of ***CSE486 : Mobile & Wireless Application Development.***
 
-How to create your repository?
+```
+Instructor Name: Shaikh Shawon Arefin Shimon 
 
-<7 Digit Student ID>_FA2020_CSE486.1
+Initials: SAS3
 
-For Example, if your 7 digit student ID is 1911231, then your repository will be 1911231_FA2020_CSE486.1
+Website: http://ece.northsouth.edu/people/shaikh-shawon-arefin-shimon/
+```
 
-Folder Structure:
+**Repository maintenance by**
 
-1911231_FA2020_CSE486.1
+```
+Name: K. M. H. Mubin
 
-  |-------- Assignments
-  
-              |------------- Assignment 1
-              
-              |------------- Assignment 2
-              
-              |------------- Assignment 3
-              
-              |------------- Assignment 4
-              
-  |-------- Android Project
-  
-              |------------- README.md
-              
-              |------------- Project Code
-              
-                              
-  
-              
+ID: 1621802042
+
+Email: kmh.mubin@northsouth.edu
+```
+
