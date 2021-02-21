@@ -34,7 +34,10 @@ All work can be found on the following link 👇👇
 
 ## Foundations
 
-
+<details>
+<summary>Grids</summary>
+<img src="https://github.com/NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01/blob/main/Project/Design%20images/Grids.png">
+</details>
 
 
 
