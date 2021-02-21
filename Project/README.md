@@ -26,3 +26,10 @@ I divided the workflow in 3 category.
 <li> Upload</li>
 </ul>
 </details>
+
+## UX & UI Design
+
+To learn more about the UI & UX design follow this link below.
+
+| [ 🎨 Design Documentation](https://github.com/NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01/blob/main/Project/Design.md) |
+| -------------------------------------------------------------------------------------------------------------------- |
