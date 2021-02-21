@@ -40,6 +40,11 @@ All work can be found on the following link 👇👇
 </details>
 
 <details>
+<summary>Logo</summary>
+<img src="https://github.com/NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01/blob/main/Project/Design%20images/Adaptive%20logo.png">
+</details>
+
+<details>
 <summary>Grids</summary>
 <img src="https://github.com/NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01/blob/main/Project/Design%20images/Grids.png">
 </details>
