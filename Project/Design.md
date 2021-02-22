@@ -54,6 +54,11 @@ All work can be found on the following link 👇👇
 <img src="https://github.com/NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01/blob/main/Project/Design%20images/24px%20icons.jpg">
 </details>
 
+<details>
+<summary>Typography</summary>
+<img src="https://github.com/NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01/blob/main/Project/Design%20images/Typography.jpg">
+</details>
+
 
 ## Wireframes
 
