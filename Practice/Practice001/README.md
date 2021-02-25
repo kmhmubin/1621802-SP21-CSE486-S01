@@ -1,1 +1,3 @@
-#Sample Readme.md to create folder structure
+# Hello World App
+
+Print out the **Logcat** from Main Activity
