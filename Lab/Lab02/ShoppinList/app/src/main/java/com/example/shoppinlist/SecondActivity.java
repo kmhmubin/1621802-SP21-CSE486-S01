@@ -40,18 +40,22 @@ public class SecondActivity extends AppCompatActivity {
             case R.id.button_eggs:
                 return_items_intent.putExtra(EXTRA_ITEMS, "Eggs");
                 setResult(RESULT_OK, return_items_intent);
+                finish();
                 break;
             case R.id.button_milk:
                 return_items_intent.putExtra(EXTRA_ITEMS, "Milk");
                 setResult(RESULT_OK, return_items_intent);
+                finish();
                 break;
             case R.id.button_oil:
                 return_items_intent.putExtra(EXTRA_ITEMS, "Oil");
                 setResult(RESULT_OK, return_items_intent);
+                finish();
                 break;
             case R.id.button_rice:
                 return_items_intent.putExtra(EXTRA_ITEMS, "Rice");
                 setResult(RESULT_OK, return_items_intent);
+                finish();
                 break;
             case R.id.button_salt:
                 return_items_intent.putExtra(EXTRA_ITEMS, "Salt");
