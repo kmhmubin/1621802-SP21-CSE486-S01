@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Shopping List ii</string>
+    <string name="blank">blank</string>
+    <string name="add_item">Add Item</string>
+    <string name="cheese">Cheese</string>
+    <string name="rice">Rice</string>
+    <string name="apple">Apple</string>
+    <string name="salt">salt</string>
+    <string name="milk">milk</string>
+    <string name="eggs">eggs</string>
+    <string name="bread">bread</string>
+    <string name="sugar">sugar</string>
+    <string name="oil">oil</string>
+    <string name="wheat">wheat</string>
 </resources>
