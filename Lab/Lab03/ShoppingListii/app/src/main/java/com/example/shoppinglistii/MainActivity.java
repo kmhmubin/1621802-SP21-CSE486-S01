@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         item[8] = findViewById(R.id.item9);
         item[9] = findViewById(R.id.item10);
         // reference the Edit Text field for map address
-        storeEditText = findViewById(R.id.map_address);
+        storeEditText = findViewById(R.id.map_editText);
 
         if (savedInstanceState != null) {
             itemList = savedInstanceState.getStringArrayList("ItemListStringArray");
@@ -101,20 +101,16 @@ public class MainActivity extends AppCompatActivity {
     // function for search store
 
     @SuppressLint("QueryPermissionsNeeded")
-    public void searchStore(View view) {
-        // get text as string
+    public void searchStores(View view) {
+        // get the value from the input field and convert into string
         String location = storeEditText.getText().toString();
+        Uri mapAddress = Uri.parse("geo:0,0?q=" + location);
+        // creating new intent for map address
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, mapAddress);
+        // open the address in the map app
+        mapIntent.setPackage("com.google.android.apps.maps");
+        // start the map app and search the store name
+        startActivity(mapIntent);
 
-        // parse teh location and create the intent
-        Uri addressURL = Uri.parse("geo:0,0?q=" + location);
-        Intent intent = new Intent(Intent.ACTION_VIEW, addressURL);
-
-        // find an activity to handel the intent and start the activity
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        } else {
-            Toast.makeText(MainActivity.this, "There was a problem with the store search.", Toast.LENGTH_LONG).show();
-        }
     }
-
 }
