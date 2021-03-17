@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -98,27 +99,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // function for search store
+
     @SuppressLint("QueryPermissionsNeeded")
     public void searchStore(View view) {
         // get text as string
         String location = storeEditText.getText().toString();
-        // default address
-        String url = null;
-        // encode the url in utf8
-        try {
-            url = URLEncoder.encode(location, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        // search query for the map api
-        Uri address = Uri.parse("https://www.google.com/maps/search/?api=1&query=" + url);
-        // implicit intent for the address
-        Intent intent = new Intent(Intent.ACTION_VIEW, address);
-        // open in the map apps or show error
+
+        // parse teh location and create the intent
+        Uri addressURL = Uri.parse("geo:0,0?q=" + location);
+        Intent intent = new Intent(Intent.ACTION_VIEW, addressURL);
+
+        // find an activity to handel the intent and start the activity
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
             Toast.makeText(MainActivity.this, "There was a problem with the store search.", Toast.LENGTH_LONG).show();
         }
     }
+
 }
