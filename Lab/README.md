@@ -68,3 +68,9 @@ Lab Instructor: **Marufa Ferdausi**
 
 * Shopping List
 
+
+## Lab 03 (11/03/2021)
+
+#### Assignment:
+
+* Shopping List store name search
