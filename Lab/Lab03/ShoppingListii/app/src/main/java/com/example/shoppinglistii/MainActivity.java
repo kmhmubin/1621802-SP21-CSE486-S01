@@ -3,12 +3,17 @@ package com.example.shoppinglistii;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private final TextView[] item = new TextView[10];
     // creating array list of items
     private ArrayList<String> itemList = new ArrayList<>(10);
+    //    variable for edit text
+    private EditText storeEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         item[7] = findViewById(R.id.item8);
         item[8] = findViewById(R.id.item9);
         item[9] = findViewById(R.id.item10);
+        // reference the Edit Text field for map address
+        storeEditText = findViewById(R.id.map_address);
 
         if (savedInstanceState != null) {
             itemList = savedInstanceState.getStringArrayList("ItemListStringArray");
@@ -88,6 +97,28 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // function for search store
+    @SuppressLint("QueryPermissionsNeeded")
     public void searchStore(View view) {
+        // get text as string
+        String location = storeEditText.getText().toString();
+        // default address
+        String url = null;
+        // encode the url in utf8
+        try {
+            url = URLEncoder.encode(location, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        // search query for the map api
+        Uri address = Uri.parse("https://www.google.com/maps/search/?api=1&query=" + url);
+        // implicit intent for the address
+        Intent intent = new Intent(Intent.ACTION_VIEW, address);
+        // open in the map apps or show error
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(MainActivity.this, "There was a problem with the store search.", Toast.LENGTH_LONG).show();
+        }
     }
 }
