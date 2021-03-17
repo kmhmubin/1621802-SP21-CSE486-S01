@@ -15,4 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void addItem(View view) {
     }
+
+    public void searchStore(View view) {
+    }
 }

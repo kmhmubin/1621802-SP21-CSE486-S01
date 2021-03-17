@@ -12,4 +12,6 @@
     <string name="sugar">sugar</string>
     <string name="oil">oil</string>
     <string name="wheat">wheat</string>
+    <string name="search_store">searchStore</string>
+    <string name="search">Search</string>
 </resources>
