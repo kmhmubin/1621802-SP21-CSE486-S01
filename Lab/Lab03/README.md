@@ -12,28 +12,28 @@
 
 Start screen
 
-![Start screen](E:\GitHub\1621802-SP21-CSE486-S01\Lab\Lab03\Screenshot (27).png)
+![1621802-SP21-CSE486-S01/Screenshot (27).png at main · NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01 (github.com)](https://github.com/NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01/blob/main/Lab/Lab03/Screenshot (27).png)
 
 
 
 Second activity
 
-![second activity](E:\GitHub\1621802-SP21-CSE486-S01\Lab\Lab03\Screenshot (28).png)
+![1621802-SP21-CSE486-S01/Screenshot (28).png at main · NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01 (github.com)](https://github.com/NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01/blob/main/Lab/Lab03/Screenshot (28).png)
 
  
 
 List view
 
-![show lists](E:\GitHub\1621802-SP21-CSE486-S01\Lab\Lab03\Screenshot (29).png)
+![1621802-SP21-CSE486-S01/Screenshot (29).png at main · NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01 (github.com)](https://github.com/NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01/blob/main/Lab/Lab03/Screenshot (29).png)
 
 
 
 Store name input
 
-![store name](E:\GitHub\1621802-SP21-CSE486-S01\Lab\Lab03\Screenshot (30).png)
+![1621802-SP21-CSE486-S01/Screenshot (30).png at main · NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01 (github.com)](https://github.com/NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01/blob/main/Lab/Lab03/Screenshot (30).png)
 
 
 
 Store in maps 
 
-![maps](E:\GitHub\1621802-SP21-CSE486-S01\Lab\Lab03\Screenshot (31).png)
+![1621802-SP21-CSE486-S01/Screenshot (31).png at main · NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01 (github.com)](https://github.com/NSU-SP21-CSE486-1/1621802-SP21-CSE486-S01/blob/main/Lab/Lab03/Screenshot (31).png)
