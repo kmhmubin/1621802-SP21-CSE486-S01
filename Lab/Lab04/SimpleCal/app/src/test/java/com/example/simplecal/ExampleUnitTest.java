@@ -36,4 +36,9 @@ public class ExampleUnitTest {
         assertEquals(1d, -1d, 2d);
     }
 
+    @Test
+    public  void additionFloating_isCorrect(){
+        assertEquals(2.222,1.111d,1.111d);
+    }
+
 }
