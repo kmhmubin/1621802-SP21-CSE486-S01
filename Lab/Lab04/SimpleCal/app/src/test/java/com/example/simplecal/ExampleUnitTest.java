@@ -1,5 +1,6 @@
 package com.example.simplecal;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,19 +17,23 @@ import static org.junit.Assert.*;
  */
 @RunWith(JUnit4.class)
 public class ExampleUnitTest {
-   private Calculator mCalculator;
 
-   // setting up the environment
+    // setting up the environment
     @Before
-    public void setUp(){
-        mCalculator = new Calculator();
+    public void setUp() {
+        Calculator mCalculator = new Calculator();
     }
 
     // testing the addition
     @Test
-    public void addTwoNumbers(){
-        double resultAdd = mCalculator.addition(1d,1d);
-        assertThat(resultAdd, is(equalTo(2d)));
+    public void additionPositive_isCorrect() {
+        assertEquals(2d, 1d, 1d);
+    }
+
+    // addition with negative values
+    @Test
+    public void additionNegative_isCorrect() {
+        assertEquals(1d, -1d, 2d);
     }
 
 }
