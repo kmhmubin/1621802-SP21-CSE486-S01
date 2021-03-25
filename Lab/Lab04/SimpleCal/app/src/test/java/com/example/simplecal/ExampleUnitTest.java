@@ -1,5 +1,7 @@
 package com.example.simplecal;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,10 +20,12 @@ import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
 public class ExampleUnitTest {
 
+    private Calculator mCalculator;
+
     // setting up the environment
     @Before
     public void setUp() {
-        Calculator mCalculator = new Calculator();
+        mCalculator = new Calculator();
     }
 
     // testing the addition
@@ -58,5 +62,18 @@ public class ExampleUnitTest {
         assertEquals(16d,2d,32d);
     }
 
+    // test for multiplication
+    @Test
+    public void multiply_isCorrect(){
+        double resultMul = mCalculator.multiply(32d,2d);
+        assertThat(resultMul,is(equalTo(64d)));
+    }
+
+    // Test for divide by zero
+    @Test
+    public void divByZeroThrows(){
+        double resultDiv = mCalculator.division(16d,0d);
+        assertThat(resultDiv,is(equalTo(Double.POSITIVE_INFINITY)));
+    }
 
 }
