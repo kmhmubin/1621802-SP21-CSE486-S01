@@ -41,4 +41,17 @@ public class ExampleUnitTest {
         assertEquals(2.222,1.111d,1.111d);
     }
 
+    // subtraction test positive value
+    @Test
+    public void subPositive_isCorrect(){
+        assertEquals(0d,1d,1d);
+    }
+    // subtraction test negative value
+    @Test
+    public void subNegative_isCorrect(){
+        assertEquals(-16d,1d,17d);
+    }
+
+
+
 }
