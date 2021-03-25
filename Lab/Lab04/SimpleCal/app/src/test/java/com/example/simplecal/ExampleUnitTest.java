@@ -52,6 +52,11 @@ public class ExampleUnitTest {
         assertEquals(-16d,1d,17d);
     }
 
+    // test for simple division
+    @Test
+    public void division_isCorrect(){
+        assertEquals(16d,2d,32d);
+    }
 
 
 }
