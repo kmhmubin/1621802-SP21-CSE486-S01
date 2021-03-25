@@ -4,7 +4,7 @@
 
 Simple calculator
 
-Coding challange:
+Coding challenge:
 - divided by zero exception
 
 
