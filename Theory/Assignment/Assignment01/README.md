@@ -1,1 +1,6 @@
-<h1> NSU Career & Placement Center App UX Design</h1>
+![NSU CPC](https://user-images.githubusercontent.com/52270073/113006693-67a6b580-9197-11eb-8d19-640ecce4ee8b.jpg)
+![About project](https://user-images.githubusercontent.com/52270073/113006808-7d1bdf80-9197-11eb-99e5-3aa7ad667371.jpg)
+![Typography   Color](https://user-images.githubusercontent.com/52270073/113006826-81e09380-9197-11eb-9f3a-0a517a48ceaf.jpg)
+![User flow](https://user-images.githubusercontent.com/52270073/113006837-8442ed80-9197-11eb-96c8-57599a692b73.jpg)
+![Onboarding](https://user-images.githubusercontent.com/52270073/113007602-2c58b680-9198-11eb-8594-d800bccd4ce5.jpg)
+![Homepage](https://user-images.githubusercontent.com/52270073/113008496-e6502280-9198-11eb-8bbc-eed994e254a0.jpg)
