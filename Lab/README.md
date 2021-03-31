@@ -74,3 +74,21 @@ Lab Instructor: **Marufa Ferdausi**
 #### Assignment:
 
 * Shopping List store name search
+
+
+## Lab 03 (18/03/2021)
+
+#### Assignment:
+
+* simple calculator 
+
+
+## Lab 03 (25/03/2021)
+
+#### Practices:
+* Droid cafe
+
+#### Assignment:
+
+* Date and Time Picker
+* Sign in app
