@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Picker For Time</string>
 
-    <string name="hello_world">Hello world! Pick a time</string>
+    <string name="hello_world">Pick a time and date</string>
     <string name="time">Time</string>
+    <string name="date">Date</string>
     <string name="time_picker">timePicker</string>
     <string name="blank_fragment">Blank Fragment</string>
 </resources>
