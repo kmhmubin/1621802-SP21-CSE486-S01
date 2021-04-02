@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Login App</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="username_outline_logo">username outline logo</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="password_outline_logo">password_outline_logo</string>
+    <string name="login">Login</string>
 </resources>
