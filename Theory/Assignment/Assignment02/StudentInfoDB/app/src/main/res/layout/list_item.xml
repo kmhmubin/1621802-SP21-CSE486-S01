@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardBackgroundColor="@color/teal_200"
+    app:cardBackgroundColor="@color/purple_200"
     app:cardCornerRadius="5dp"
     app:contentPadding="5dp">
 
@@ -29,8 +29,11 @@
             android:id="@+id/item_title"
             android:layout_width="0dp"
             android:layout_height="30dp"
+            android:fontFamily="sans-serif-medium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="24sp"
+            android:typeface="sans"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/item_image"
