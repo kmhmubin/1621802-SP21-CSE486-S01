@@ -1,4 +1,7 @@
 package com.example.studentinfodb.model
 
-data class Student(val stringResourceId: Int) {
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+
+data class Student(@StringRes val stringResourceId: Int, @DrawableRes val imageResourceId: Int) {
 }
