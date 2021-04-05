@@ -25,7 +25,8 @@ class ItemAdapter(private val context: Context, private val dataset: List<Studen
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+//        return the size of dataset
+        return dataset.size
     }
 
 }
