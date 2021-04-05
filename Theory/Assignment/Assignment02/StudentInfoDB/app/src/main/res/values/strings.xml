@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">StudentInfoDB</string>
+    <string name="student1">Jarod Taube</string>
+    <string name="student2">Robbie Cade</string>
+    <string name="student3">Herminia Stimson</string>
+    <string name="student4">Hoa Cimmino</string>
+    <string name="student5">Mauro Tye</string>
+    <string name="student6">Cammy Cone</string>
+    <string name="student7">Anjelica Perreault</string>
+    <string name="student8">Gennie Locher</string>
+    <string name="student9">Tana Selzer</string>
+    <string name="student10">Vincenza Ison</string>
+
 </resources>
