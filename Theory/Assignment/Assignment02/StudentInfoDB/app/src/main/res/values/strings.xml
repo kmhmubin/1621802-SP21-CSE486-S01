@@ -12,5 +12,6 @@
     <string name="student10">Vincenza Ison</string>
     <string name="person_icon">person icon</string>
     <string name="add_new_student_button">add new student</string>
+    <string name="student_name">Student Name</string>
 
 </resources>
