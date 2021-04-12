@@ -14,5 +14,6 @@
     <string name="add_new_student_button">add new student</string>
     <string name="student_name">Student Name</string>
     <string name="student_id">Student ID</string>
+    <string name="academic_school">Academic School</string>
 
 </resources>

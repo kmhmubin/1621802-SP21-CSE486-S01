@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="add_new_student_button">add new student</string>
+    <string name="academic_school">Academic School</string>
 </resources>
