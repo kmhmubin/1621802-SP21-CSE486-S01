@@ -1,5 +1,6 @@
 package com.example.studentinfodb
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,10 +12,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         // floating button
         val fab: View = findViewById(R.id.floating_button)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .show()
+        fab.setOnClickListener {
+            Intent(this, InsertActivity::class.java).also {
+                startActivity(it)
+            }
         }
     }
+
 }
