@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="insert_new_student_information">Insert new student information</string>
+    <string name="student_name">Student Name</string>
+    <string name="select_academic_school">Select Academic School</string>
 </resources>
