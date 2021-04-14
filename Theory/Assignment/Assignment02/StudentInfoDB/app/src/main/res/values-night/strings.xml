@@ -5,4 +5,9 @@
     <string name="select_academic_school">Select Academic School</string>
     <string name="department_name">Department Name</string>
     <string name="date_of_birth">Date Of Birth</string>
+    <string name="phone_number">Phone number</string>
+    <string name="nid_number">NID Number</string>
+    <string name="present_address">Present Address</string>
+    <string name="permanent_address">Permanent Address</string>
+    <string name="submit">Submit</string>
 </resources>
