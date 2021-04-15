@@ -43,5 +43,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.fragmentcodingchallenge.FeedbackFragment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_feedback" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
