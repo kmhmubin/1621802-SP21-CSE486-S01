@@ -1,13 +1,28 @@
 package com.example.studentinfodb.database
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+
+@Entity(tableName = "student_db")
 data class StudentInfo(
-    val id: Int,
-    val name: String,
-    val school: String,
-    val department: String,
-    val date_of_birth: String,
-    val phone_number: Int,
-    val nid_number: Int,
-    val present_address: String,
-    val permanent_address: String
+    @PrimaryKey
+    val studentId: Int,
+    @ColumnInfo(name = "student_name")
+    var studentName: String?,
+    @ColumnInfo(name = "school_name")
+    var schoolName: String?,
+    @ColumnInfo(name = "department_name")
+    var departmentName: String?,
+    @ColumnInfo(name = "date_of_birth")
+    var dateOfBirth: String?,
+    @ColumnInfo(name = "phone_number")
+    var phoneNumber: Int,
+    @ColumnInfo(name = "nid_number")
+    var nidNumber: Int,
+    @ColumnInfo(name = "present_address")
+    var presentAddress: String?,
+    @ColumnInfo(name = "permanent_address")
+    var permanentAddress: String?
 )
