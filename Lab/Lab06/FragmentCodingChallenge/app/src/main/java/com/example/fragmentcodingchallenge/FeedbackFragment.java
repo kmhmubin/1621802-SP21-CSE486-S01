@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class FeedbackFragment extends Fragment {
@@ -57,6 +58,18 @@ public class FeedbackFragment extends Fragment {
                         }
                     }
                 });
+
+        // rating button event click listener
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                String myRating =
+                        (getString(R.string.my_rating)) + String.valueOf(ratingBar.getRating());
+
+                // show a toast message for rating
+                Toast.makeText(getContext(), myRating, Toast.LENGTH_LONG).show();
+            }
+        });
 
         return rootView;
     }
