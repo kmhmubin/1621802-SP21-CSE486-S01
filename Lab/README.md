@@ -76,14 +76,14 @@ Lab Instructor: **Marufa Ferdausi**
 * Shopping List store name search
 
 
-## Lab 03 (18/03/2021)
+## Lab 04 (18/03/2021)
 
 #### Assignment:
 
 * simple calculator 
 
 
-## Lab 03 (25/03/2021)
+## Lab 05 (25/03/2021)
 
 #### Practices:
 * Droid cafe
@@ -92,3 +92,12 @@ Lab Instructor: **Marufa Ferdausi**
 
 * Date and Time Picker
 * Sign in app
+
+## Lab 06 (08/04/2021)
+
+#### Practices:
+* Fragment Example
+
+#### Assignment:
+
+* Fragment Example Coding Challenge
