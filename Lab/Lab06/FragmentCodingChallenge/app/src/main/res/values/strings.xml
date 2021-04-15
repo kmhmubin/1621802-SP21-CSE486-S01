@@ -27,4 +27,5 @@
 
     <!-- Text for the exception message in FragmentCommunicate. -->
     <string name="exception_message">must implement OnFragmentInteractionListener</string>
+    <string name="paper_box">paper box</string>
 </resources>
