@@ -101,24 +101,36 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Date of birth text field-->
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@id/selected_date"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dob_date"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="300dp"
-            android:layout_height="52dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/roboto"
-            android:gravity="center_vertical"
-            android:hint="@string/date_of_birth"
-            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
-            android:typeface="normal"
+            android:orientation="vertical"
+            app:endIconMode="clear_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/department_list_dropdown" />
+            app:layout_constraintTop_toBottomOf="@+id/department_list_dropdown">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/roboto"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:text="@string/date_of_birth"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:typeface="normal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- date picker button -->
 
-        <!-- Phone number-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/datePicker_button"
             android:layout_width="52dp"
@@ -130,12 +142,12 @@
             app:icon="@drawable/ic_outline_calendar_today_24"
             app:iconGravity="textStart"
             app:iconPadding="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/selected_date"
+            app:layout_constraintBottom_toBottomOf="@+id/dob_date"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/selected_date"
-            app:layout_constraintTop_toTopOf="@+id/selected_date"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintStart_toEndOf="@+id/dob_date"
+            app:layout_constraintTop_toTopOf="@+id/dob_date" />
+
+        <!-- Phone number-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/phone_number"
@@ -148,7 +160,7 @@
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/selected_date">
+            app:layout_constraintTop_toBottomOf="@+id/dob_date">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
