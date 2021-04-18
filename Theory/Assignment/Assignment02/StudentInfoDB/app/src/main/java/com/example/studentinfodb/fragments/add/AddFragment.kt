@@ -3,7 +3,6 @@ package com.example.studentinfodb.fragments.add
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,7 +48,7 @@ class AddFragment : Fragment() {
         )
 
         val schoolAdapter = ArrayAdapter(requireContext(), R.layout.school_list, schoolNames)
-        (binding.schoolListDropdown.editText as? AutoCompleteTextView)?.setAdapter(schoolAdapter)
+        (binding.schoolListDropdown as? AutoCompleteTextView)?.setAdapter(schoolAdapter)
 
 
         /*
@@ -66,7 +65,7 @@ class AddFragment : Fragment() {
 
         val departmentAdapter =
             ArrayAdapter(requireContext(), R.layout.school_list, departmentNames)
-        (binding.departmentListDropdown.editText as? AutoCompleteTextView)?.setAdapter(
+        (binding.departmentListDropdown as? AutoCompleteTextView)?.setAdapter(
             departmentAdapter
         )
 
@@ -97,67 +96,88 @@ class AddFragment : Fragment() {
     }
 
     private fun insertDataToDatabase() {
-        val studentId = binding.nsuId.editText.toString()
-        val studentName = binding.studentName.editText.toString()
-        val schoolName = binding.schoolListDropdown.editText.toString()
-        val departmentName = binding.departmentListDropdown.editText.toString()
-        val dateOfBirth = binding.dobDate.editText.toString()
-        val phoneNumber = binding.phoneNumber.editText.toString()
-        val nidNumber = binding.nidNumber.editText.toString()
-        val presentAddress = binding.presentAddress.editText.toString()
-        val permanentAddress = binding.permanentAddress.editText.toString()
+        val studentId = binding.nsuId.toString()
+        val studentName = binding.studentName.toString()
+        val schoolName = binding.schoolListDropdown.toString()
+        val departmentName = binding.departmentListDropdown.toString()
+        val dateOfBirth = binding.dobDate.toString()
+        val phoneNumber = binding.phoneNumber.toString()
+        val nidNumber = binding.nidNumber.toString()
+        val presentAddress = binding.presentAddress.toString()
+        val permanentAddress = binding.permanentAddress.toString()
 
-        if (inputCheck(
-                studentId, studentName, schoolName, departmentName, dateOfBirth, phoneNumber,
-                nidNumber, presentAddress, permanentAddress
-            )
-        ) {
-            // create student object
-            val student = StudentInfo(
-                Integer.parseInt(studentId.toString()),
-                studentName,
-                schoolName,
-                departmentName,
-                dateOfBirth,
-                Integer.parseInt(phoneNumber.toString()),
-                Integer.parseInt(nidNumber.toString()),
-                presentAddress,
-                permanentAddress
-            )
+        val student = StudentInfo(
+            studentId,
+            studentName,
+            schoolName,
+            departmentName,
+            dateOfBirth,
+            phoneNumber,
+            nidNumber,
+            presentAddress,
+            permanentAddress
+        )
+        mStudentViewModel.insert(student)
 
-            // add data to database
-            mStudentViewModel.insert(student)
-            // show a success message in snack bar
-            Snackbar.make(
-                requireContext(), binding.addLayout, "Successfully Added", Snackbar
-                    .LENGTH_LONG
-            ).show()
-            // navigate back to main page
-            findNavController().navigate(R.id.action_addFragment_to_listFragment)
-        } else {
-            // show a error message in snack bar
-            Snackbar.make(
-                requireContext(), binding.addLayout, "Please fill out all fields", Snackbar
-                    .LENGTH_LONG
-            ).show()
-        }
+        Snackbar.make(
+            requireContext(), binding.addLayout, "Successfully Added", Snackbar
+                .LENGTH_LONG
+        ).show()
+        // navigate back to main page
+        findNavController().navigate(R.id.action_addFragment_to_listFragment)
+
+//        if (inputCheck(
+//                studentId, studentName, schoolName, departmentName, dateOfBirth, phoneNumber,
+//                nidNumber, presentAddress, permanentAddress
+//            )
+//        ) {
+//            // create student object
+//            val student = StudentInfo(
+////                Integer.parseInt(studentId.toString()),
+//                studentId,
+//                studentName,
+//                schoolName,
+//                departmentName,
+//                dateOfBirth,
+//                phoneNumber,
+//                nidNumber,
+//                presentAddress,
+//                permanentAddress
+//            )
+//
+//            // add data to database
+//            mStudentViewModel.insert(student)
+//            // show a success message in snack bar
+//            Snackbar.make(
+//                requireContext(), binding.addLayout, "Successfully Added", Snackbar
+//                    .LENGTH_LONG
+//            ).show()
+//            // navigate back to main page
+//            findNavController().navigate(R.id.action_addFragment_to_listFragment)
+//        } else {
+//            // show a error message in snack bar
+//            Snackbar.make(
+//                requireContext(), binding.addLayout, "Please fill out all fields", Snackbar
+//                    .LENGTH_LONG
+//            ).show()
+//        }
     }
 
     /*
     Check the input field is empty or not
      */
-    private fun inputCheck(
-        studentId: String, studentName: String, schoolName: String,
-        departmentName: String, dateOfBirth: String, phoneNumber: String,
-        nidNumber: String, presentAddress: String, permanentAddress: String
-    ): Boolean {
-        return !(TextUtils.isEmpty(studentId.toString()) && TextUtils.isEmpty(studentName) && TextUtils
-            .isEmpty(schoolName) && TextUtils.isEmpty(departmentName) && TextUtils.isEmpty(
-            dateOfBirth
-        )
-                && TextUtils.isEmpty(phoneNumber.toString()) && TextUtils.isEmpty(nidNumber.toString())
-                && TextUtils.isEmpty(presentAddress) && TextUtils.isEmpty(permanentAddress))
-    }
+//    private fun inputCheck(
+//        studentId: Int, studentName: String, schoolName: String,
+//        departmentName: String, dateOfBirth: String, phoneNumber: String,
+//        nidNumber: String, presentAddress: String, permanentAddress: String
+//    ): Boolean {
+//        return !(TextUtils.isEmpty(studentId.toString()) && TextUtils.isEmpty(studentName) && TextUtils
+//            .isEmpty(schoolName) && TextUtils.isEmpty(departmentName) && TextUtils.isEmpty(
+//            dateOfBirth
+//        )
+//                && TextUtils.isEmpty(phoneNumber.toString()) && TextUtils.isEmpty(nidNumber.toString())
+//                && TextUtils.isEmpty(presentAddress) && TextUtils.isEmpty(permanentAddress))
+//    }
 
     /*
     Function for date picker dialog
@@ -180,7 +200,7 @@ class AddFragment : Fragment() {
                                                  selectedDayOfMonth ->
 
                 // show the date in the edit text view
-                binding.dobDate.editText?.setText(
+                binding.dobDate.setText(
                     "$selectedDayOfMonth/ ${selectedMonth + 1}/ " +
                             "$selectedYear"
                 ).toString()
@@ -201,5 +221,13 @@ class AddFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
+
+
+//    var idString: String = studentIDEditText.getText().toString()
+//    var id = Integer.valueOf(idString)
 }
+
+
+
+
 

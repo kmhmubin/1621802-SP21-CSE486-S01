@@ -15,7 +15,7 @@
 
         <!-- NSU ID INPUT-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nsu_id"
+            android:id="@+id/nsu_id_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,6 +27,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nsu_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
@@ -39,7 +40,7 @@
 
         <!-- Student name-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/student_name"
+            android:id="@+id/student_name_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,9 +50,10 @@
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nsu_id">
+            app:layout_constraintTop_toBottomOf="@+id/nsu_id_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/student_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
@@ -63,7 +65,7 @@
 
         <!-- School list-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/school_list_dropdown"
+            android:id="@+id/school_list_dropdown_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,9 +73,10 @@
             android:hint="@string/select_academic_school"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/student_name">
+            app:layout_constraintTop_toBottomOf="@+id/student_name_layout">
 
             <AutoCompleteTextView
+                android:id="@+id/school_list_dropdown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
@@ -83,7 +86,7 @@
 
         <!-- Department list-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/department_list_dropdown"
+            android:id="@+id/department_list_dropdown_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,9 +94,10 @@
             android:hint="@string/department_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/school_list_dropdown">
+            app:layout_constraintTop_toBottomOf="@+id/school_list_dropdown_layout">
 
             <AutoCompleteTextView
+                android:id="@+id/department_list_dropdown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
@@ -103,7 +107,7 @@
 
         <!-- Date of Birth -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dob_date"
+            android:id="@+id/dob_date_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -111,9 +115,10 @@
             android:orientation="vertical"
             app:endIconMode="clear_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/department_list_dropdown">
+            app:layout_constraintTop_toBottomOf="@+id/department_list_dropdown_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dob_date"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:clickable="false"
@@ -142,15 +147,15 @@
             app:icon="@drawable/ic_outline_calendar_today_24"
             app:iconGravity="textStart"
             app:iconPadding="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/dob_date"
+            app:layout_constraintBottom_toBottomOf="@+id/dob_date_layout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/dob_date"
-            app:layout_constraintTop_toTopOf="@+id/dob_date" />
+            app:layout_constraintStart_toEndOf="@+id/dob_date_layout"
+            app:layout_constraintTop_toTopOf="@+id/dob_date_layout" />
 
         <!-- Phone number-->
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/phone_number"
+            android:id="@+id/phone_number_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -160,9 +165,10 @@
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dob_date">
+            app:layout_constraintTop_toBottomOf="@+id/dob_date_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
@@ -175,7 +181,7 @@
 
         <!-- NID number-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nid_number"
+            android:id="@+id/nid_number_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -185,9 +191,10 @@
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phone_number">
+            app:layout_constraintTop_toBottomOf="@+id/phone_number_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nid_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
@@ -200,7 +207,7 @@
 
         <!-- Present Address-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/present_address"
+            android:id="@+id/present_address_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -210,9 +217,10 @@
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nid_number">
+            app:layout_constraintTop_toBottomOf="@+id/nid_number_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/present_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
@@ -224,7 +232,7 @@
 
         <!-- Permanent Address-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/permanent_address"
+            android:id="@+id/permanent_address_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -234,9 +242,10 @@
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/present_address">
+            app:layout_constraintTop_toBottomOf="@+id/present_address_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/permanent_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
@@ -259,7 +268,7 @@
             app:elevation="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/permanent_address" />
+            app:layout_constraintTop_toBottomOf="@+id/permanent_address_layout" />
 
 
         <!--Constraint layout finish-->

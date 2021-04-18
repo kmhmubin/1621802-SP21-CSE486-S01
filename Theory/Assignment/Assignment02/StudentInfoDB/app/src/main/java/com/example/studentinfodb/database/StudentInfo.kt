@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "student_db")
 data class StudentInfo(
     @PrimaryKey
-    val studentId: Int,
+    val studentId: String,
     @ColumnInfo(name = "student_name")
     var studentName: String?,
     @ColumnInfo(name = "school_name")
@@ -18,9 +18,9 @@ data class StudentInfo(
     @ColumnInfo(name = "date_of_birth")
     var dateOfBirth: String?,
     @ColumnInfo(name = "phone_number")
-    var phoneNumber: Int,
+    var phoneNumber: String?,
     @ColumnInfo(name = "nid_number")
-    var nidNumber: Int,
+    var nidNumber: String?,
     @ColumnInfo(name = "present_address")
     var presentAddress: String?,
     @ColumnInfo(name = "permanent_address")
