@@ -1,5 +1,6 @@
 package com.example.studentinfodb.database
 
+import android.text.Editable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -8,7 +9,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "student_db")
 data class StudentInfo(
     @PrimaryKey
-    val studentId: String,
+    val studentId: Int,
     @ColumnInfo(name = "student_name")
     var studentName: String?,
     @ColumnInfo(name = "school_name")
