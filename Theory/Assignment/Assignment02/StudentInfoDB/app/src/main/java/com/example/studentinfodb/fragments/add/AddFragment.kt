@@ -42,7 +42,7 @@ class AddFragment : Fragment() {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             schoolList.adapter = adapter
         }
-        val selectedSchool = schoolList.onItemSelectedListener.toString()
+//        val selectedSchool = schoolList.onItemSelectedListener.toString()
 
         // department list spinner
         val departmentList = binding.departmentSpinner
@@ -54,7 +54,7 @@ class AddFragment : Fragment() {
             arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             departmentList.adapter = arrayAdapter
         }
-        val selectedDepartment = departmentList.onItemSelectedListener.toString()
+//        val selectedDepartment = departmentList.onItemSelectedListener.toString()
 
         // date picker for date of birth
         binding.datePickerButton.setOnClickListener {
@@ -86,8 +86,8 @@ class AddFragment : Fragment() {
 //            insertDataToDatabase()
             val studentId = binding.nsuId.text.toString().toInt()
             val studentName = binding.studentName.text.toString()
-            val schoolName = selectedSchool
-            val departmentName = selectedDepartment
+            val schoolName = binding.schoolSpinner.onItemSelectedListener.toString()
+            val departmentName = binding.departmentSpinner.onItemSelectedListener.toString()
             val dateOfBirth = binding.dobText.text.toString()
             val phoneNumber = binding.phoneNumber.text.toString()
             val nidNumber = binding.nidNumber.text.toString()
