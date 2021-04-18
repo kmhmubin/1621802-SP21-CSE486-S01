@@ -20,7 +20,7 @@ Change the name of the action bar
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return Navigation.findNavController(this, R.id.nav_host_fragment_container).navigateUp()
+        return Navigation.findNavController(this, R.id.fragment).navigateUp()
     }
 
 }
