@@ -9,10 +9,8 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.studentinfodb.R
 import com.example.studentinfodb.databinding.FragmentAddBinding
-import com.example.studentinfodb.model.StudentViewModel
 import java.util.*
 
 
@@ -89,6 +87,13 @@ class AddFragment : Fragment() {
         return view
     }
 
+    /*
+    Function for date picker dialog
+    features:
+    1. Default show today's date
+    2. Can't select future date
+    3. show the date inside of edit text view
+     */
     @SuppressLint("SetTextI18n")
     private fun dobDatePicker(view: View) {
         val myCalender = Calendar.getInstance()
@@ -101,8 +106,8 @@ class AddFragment : Fragment() {
             requireContext(),
             DatePickerDialog.OnDateSetListener { view, selectedYear, selectedMonth,
                                                  selectedDayOfMonth ->
-//                val selectedDate = "$selectedDayOfMonth/ ${selectedMonth + 1}/ $selectedYear"
-                // show the date in the text view
+
+                // show the date in the edit text view
                 binding.dobDate.editText?.setText(
                     "$selectedDayOfMonth/ ${selectedMonth + 1}/ " +
                             "$selectedYear"
@@ -122,5 +127,11 @@ class AddFragment : Fragment() {
 //    private fun insertDataToDatabase() {
 //
 //    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }
 
