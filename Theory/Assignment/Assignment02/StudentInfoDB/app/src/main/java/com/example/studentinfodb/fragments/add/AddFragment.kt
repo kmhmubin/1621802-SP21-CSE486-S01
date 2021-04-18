@@ -3,14 +3,20 @@ package com.example.studentinfodb.fragments.add
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.studentinfodb.R
+import com.example.studentinfodb.database.StudentInfo
 import com.example.studentinfodb.databinding.FragmentAddBinding
+import com.example.studentinfodb.model.StudentViewModel
+import com.google.android.material.snackbar.Snackbar
 import java.util.*
 
 
@@ -19,7 +25,7 @@ class AddFragment : Fragment() {
     private var _binding: FragmentAddBinding? = null
     private val binding get() = _binding!!
 
-//    private lateinit var mStudentViewModel: StudentViewModel
+    private lateinit var mStudentViewModel: StudentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,11 +34,6 @@ class AddFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentAddBinding.inflate(inflater, container, false)
         val view = binding.root
-
-        /*
-        * view model object for [StudentViewModel]
-         */
-//        mStudentViewModel = ViewModelProvider(this).get(StudentViewModel::class.java)
 
 
         /*
@@ -77,14 +78,85 @@ class AddFragment : Fragment() {
             dobDatePicker(it)
         }
 
+
         /*
-        submit button
+     * view model object for [StudentViewModel]
+      */
+        mStudentViewModel = ViewModelProvider(this).get(StudentViewModel::class.java)
+
+        /*
+        Grab info when submit button pressed
          */
-//        binding.submitButton.setOnClickListener {
-//            insertDataToDatabase()
-//        }
+        binding.submitButton.setOnClickListener {
+            insertDataToDatabase()
+        }
+
+
 
         return view
+    }
+
+    private fun insertDataToDatabase() {
+        val studentId = binding.nsuId.editText.toString()
+        val studentName = binding.studentName.editText.toString()
+        val schoolName = binding.schoolListDropdown.editText.toString()
+        val departmentName = binding.departmentListDropdown.editText.toString()
+        val dateOfBirth = binding.dobDate.editText.toString()
+        val phoneNumber = binding.phoneNumber.editText.toString()
+        val nidNumber = binding.nidNumber.editText.toString()
+        val presentAddress = binding.presentAddress.editText.toString()
+        val permanentAddress = binding.permanentAddress.editText.toString()
+
+        if (inputCheck(
+                studentId, studentName, schoolName, departmentName, dateOfBirth, phoneNumber,
+                nidNumber, presentAddress, permanentAddress
+            )
+        ) {
+            // create student object
+            val student = StudentInfo(
+                Integer.parseInt(studentId.toString()),
+                studentName,
+                schoolName,
+                departmentName,
+                dateOfBirth,
+                Integer.parseInt(phoneNumber.toString()),
+                Integer.parseInt(nidNumber.toString()),
+                presentAddress,
+                permanentAddress
+            )
+
+            // add data to database
+            mStudentViewModel.insert(student)
+            // show a success message in snack bar
+            Snackbar.make(
+                requireContext(), binding.addLayout, "Successfully Added", Snackbar
+                    .LENGTH_LONG
+            ).show()
+            // navigate back to main page
+            findNavController().navigate(R.id.action_addFragment_to_listFragment)
+        } else {
+            // show a error message in snack bar
+            Snackbar.make(
+                requireContext(), binding.addLayout, "Please fill out all fields", Snackbar
+                    .LENGTH_LONG
+            ).show()
+        }
+    }
+
+    /*
+    Check the input field is empty or not
+     */
+    private fun inputCheck(
+        studentId: String, studentName: String, schoolName: String,
+        departmentName: String, dateOfBirth: String, phoneNumber: String,
+        nidNumber: String, presentAddress: String, permanentAddress: String
+    ): Boolean {
+        return !(TextUtils.isEmpty(studentId.toString()) && TextUtils.isEmpty(studentName) && TextUtils
+            .isEmpty(schoolName) && TextUtils.isEmpty(departmentName) && TextUtils.isEmpty(
+            dateOfBirth
+        )
+                && TextUtils.isEmpty(phoneNumber.toString()) && TextUtils.isEmpty(nidNumber.toString())
+                && TextUtils.isEmpty(presentAddress) && TextUtils.isEmpty(permanentAddress))
     }
 
     /*
@@ -123,10 +195,6 @@ class AddFragment : Fragment() {
         datePicker.show()
 
     }
-
-//    private fun insertDataToDatabase() {
-//
-//    }
 
 
     override fun onDestroy() {
