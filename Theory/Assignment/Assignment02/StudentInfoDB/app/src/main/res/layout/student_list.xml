@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/student_list"
+        android:id="@+id/student_id_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto"
