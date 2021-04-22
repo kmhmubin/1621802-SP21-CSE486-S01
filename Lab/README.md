@@ -101,3 +101,12 @@ Lab Instructor: **Marufa Ferdausi**
 #### Assignment:
 
 * Fragment Example Coding Challenge
+
+
+## Lab-07 (15/04/2021)
+
+#### Practice
+- Shared preferences
+
+#### Lab Assignment
+- Shared preferences Coding Challenge
