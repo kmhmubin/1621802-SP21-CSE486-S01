@@ -47,9 +47,6 @@ public abstract class SettingsActivity extends AppCompatActivity implements Adap
         String savedSpinnerSetting = mPreferences.getString(SELECTED_SPINNER_ITEM_KEY, "Default");
         if (spinner != null) {
             switch (savedSpinnerSetting) {
-                case "Default":
-                    spinner.setSelection(0);
-                    break;
                 case "Black":
                     spinner.setSelection(1);
                     break;
@@ -62,6 +59,7 @@ public abstract class SettingsActivity extends AppCompatActivity implements Adap
                 case "Green":
                     spinner.setSelection(4);
                     break;
+                case "Default":
                 default:
                     spinner.setSelection(0);
                     break;
@@ -73,10 +71,6 @@ public abstract class SettingsActivity extends AppCompatActivity implements Adap
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         spinner_item = parent.getItemAtPosition(position).toString();
         switch (spinner_item) {
-            case "Default":
-                spinnerSelectedColor = ContextCompat.getColor(this, R.color.default_background);
-                currentSpinnerSetting = "Default";
-                break;
             case "Black":
                 spinnerSelectedColor = ContextCompat.getColor(this, R.color.black);
                 currentSpinnerSetting = "Black";
@@ -93,6 +87,7 @@ public abstract class SettingsActivity extends AppCompatActivity implements Adap
                 spinnerSelectedColor = ContextCompat.getColor(this, R.color.green_background);
                 currentSpinnerSetting = "Green";
                 break;
+            case "Default":
             default:
                 spinnerSelectedColor = ContextCompat.getColor(this, R.color.default_background);
                 currentSpinnerSetting = "Default";
