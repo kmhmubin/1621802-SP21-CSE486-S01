@@ -1,5 +1,6 @@
 package com.example.hellosharedprefschallenge;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -19,8 +20,9 @@ public abstract class SettingsActivity extends AppCompatActivity implements Adap
     private final String SELECTED_SPINNER_ITEM_KEY = "selected_spinner_item";
     private String currentSpinnerSetting;
     private SharedPreferences mPreferences;
-    private String sharedPrefFile = "com.example.android.hellosharedprefschallenge";
+    public final String sharedPrefFile = "com.example.android.hellosharedprefschallenge";
     private String spinner_item;
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     private Switch countSwitch;
     private Spinner spinner;
     private int spinnerSelectedColor;
@@ -39,11 +41,7 @@ public abstract class SettingsActivity extends AppCompatActivity implements Adap
             spinner.setAdapter(adapter);
         }
         countSwitch = findViewById(R.id.saveCountSwitch);
-        if (mPreferences.getBoolean(COUNT_SAVE_KEY, true)) {
-            countSwitch.setChecked(true);
-        } else {
-            countSwitch.setChecked(false);
-        }
+        countSwitch.setChecked(mPreferences.getBoolean(COUNT_SAVE_KEY, true));
         String savedSpinnerSetting = mPreferences.getString(SELECTED_SPINNER_ITEM_KEY, "Default");
         if (spinner != null) {
             switch (savedSpinnerSetting) {
@@ -108,11 +106,7 @@ public abstract class SettingsActivity extends AppCompatActivity implements Adap
         SharedPreferences.Editor editor = mPreferences.edit();
         editor.putInt(COLOR_KEY, spinnerSelectedColor);
         editor.putString(SELECTED_SPINNER_ITEM_KEY, currentSpinnerSetting);
-        if (countSwitch.isChecked()) {
-            editor.putBoolean(COUNT_SAVE_KEY, true);
-        } else {
-            editor.putBoolean(COUNT_SAVE_KEY, false);
-        }
+        editor.putBoolean(COUNT_SAVE_KEY, countSwitch.isChecked());
         editor.apply();
         Toast.makeText(this, "Settings have been saved!", Toast.LENGTH_LONG).show();
     }

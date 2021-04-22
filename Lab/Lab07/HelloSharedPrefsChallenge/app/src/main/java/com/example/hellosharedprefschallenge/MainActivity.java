@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
     private final String COLOR_KEY = "color";
     private final String COUNT_SAVE_KEY = "count_save";
     private SharedPreferences mPreferences;
-    private String COUNT_EXTRA = "count_extra";
+    private final String COUNT_EXTRA = "count_extra";
 
-    private String sharedPrefFile = "com.example.hellosharedprefschallenge";
+    public final String sharedPrefFile = "com.example.android.hellosharedprefschallenge";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
