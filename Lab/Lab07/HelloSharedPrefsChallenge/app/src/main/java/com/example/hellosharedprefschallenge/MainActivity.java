@@ -43,10 +43,6 @@ public class MainActivity extends AppCompatActivity {
         mShowCountTextView.setBackgroundColor(mColor);
     }
 
-    public void onSettingsClick(View view) {
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
-    }
 
     public void reset(View view) {
         mCount = 0;
@@ -77,5 +73,10 @@ public class MainActivity extends AppCompatActivity {
             editor.putInt(COUNT_KEY, 0);
         }
         editor.apply();
+    }
+
+    public void onSettingsClick(View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
     }
 }
