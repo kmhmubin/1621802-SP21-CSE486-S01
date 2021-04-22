@@ -19,7 +19,7 @@ public abstract class SettingsActivity extends AppCompatActivity implements Adap
     private final String SELECTED_SPINNER_ITEM_KEY = "selected_spinner_item";
     private String currentSpinnerSetting;
     private SharedPreferences mPreferences;
-    private String sharedPrefFile = "me.mahakagg.hellosharedprefs";
+    private String sharedPrefFile = "com.example.android.hellosharedprefschallenge";
     private String spinner_item;
     private Switch countSwitch;
     private Spinner spinner;

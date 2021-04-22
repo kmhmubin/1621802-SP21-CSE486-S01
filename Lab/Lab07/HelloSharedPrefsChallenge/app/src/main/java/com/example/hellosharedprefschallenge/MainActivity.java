@@ -12,22 +12,16 @@ import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Current count
     private int mCount = 0;
-    // Current background color
     private int mColor;
-    // Text view to display both count and color
     private TextView mShowCountTextView;
-
-    // Key for current count
     private final String COUNT_KEY = "count";
-    // Key for current color
     private final String COLOR_KEY = "color";
     private final String COUNT_SAVE_KEY = "count_save";
-    private String COUNT_EXTRA = "count_extra";
     private SharedPreferences mPreferences;
+    private String COUNT_EXTRA = "count_extra";
 
-    private String sharedPrefFile = "com.example.android.hellosharedprefschallenge";
+    private String sharedPrefFile = "com.example.hellosharedprefschallenge";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +38,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void reset(View view) {
-        mCount = 0;
-        mShowCountTextView.setText(String.format("%s", mCount));
-        mColor = mPreferences.getInt(COLOR_KEY, mColor);
-        mShowCountTextView.setBackgroundColor(mColor);
+    public void changeBackground(View view) {
+        int color = ((ColorDrawable) view.getBackground()).getColor();
+        mShowCountTextView.setBackgroundColor(color);
+        mColor = color;
     }
 
     public void countUp(View view) {
@@ -56,10 +49,11 @@ public class MainActivity extends AppCompatActivity {
         mShowCountTextView.setText(String.format("%s", mCount));
     }
 
-    public void changeBackground(View view) {
-        int color = ((ColorDrawable) view.getBackground()).getColor();
-        mShowCountTextView.setBackgroundColor(color);
-        mColor = color;
+    public void reset(View view) {
+        mCount = 0;
+        mShowCountTextView.setText(String.format("%s", mCount));
+        mColor = mPreferences.getInt(COLOR_KEY, mColor);
+        mShowCountTextView.setBackgroundColor(mColor);
     }
 
     @Override
@@ -67,9 +61,10 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         SharedPreferences.Editor editor = mPreferences.edit();
         boolean countSave = mPreferences.getBoolean(COUNT_SAVE_KEY, true);
-        if (countSave) {
+        if (countSave){
             editor.putInt(COUNT_KEY, mCount);
-        } else {
+        }
+        else{
             editor.putInt(COUNT_KEY, 0);
         }
         editor.apply();
