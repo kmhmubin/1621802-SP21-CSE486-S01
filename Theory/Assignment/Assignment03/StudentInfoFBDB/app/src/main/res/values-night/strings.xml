@@ -7,4 +7,6 @@
     <string name="login_button">Login</string>
     <string name="cancel_button">Cancel</string>
     <string name="error_password">Password must contain at least 8 characters.</string>
+    <string name="topbar_title">Student Info FBDB</string>
+    <string name="search_student">Search Student</string>
 </resources>
