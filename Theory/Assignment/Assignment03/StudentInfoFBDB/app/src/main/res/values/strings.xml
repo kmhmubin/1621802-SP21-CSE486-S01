@@ -3,4 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="student_info_firebase_logo">Student Info Firebase logo</string>
+    <string name="student_info_fbdb">Student Info FBDB</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_button">Login</string>
+    <string name="cancel_button">Cancel</string>
 </resources>
