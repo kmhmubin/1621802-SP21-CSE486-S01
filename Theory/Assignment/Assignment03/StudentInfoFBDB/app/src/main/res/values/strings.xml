@@ -11,4 +11,5 @@
     <string name="error_password">Password must contain at least 8 characters.</string>
     <string name="topbar_title">Student Info FBDB</string>
     <string name="search_student">Search Student</string>
+    <string name="insert_new_student_information">insert_new_student_information</string>
 </resources>
