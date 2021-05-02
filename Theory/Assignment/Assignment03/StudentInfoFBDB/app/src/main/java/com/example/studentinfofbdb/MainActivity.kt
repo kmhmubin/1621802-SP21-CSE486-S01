@@ -3,7 +3,7 @@ package com.example.studentinfofbdb
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.studentinfofbdb.fragments.LoginFragment
+import com.example.studentinfofbdb.fragments.login.LoginFragment
 
 class MainActivity : AppCompatActivity(), NavigationHost {
     override fun onCreate(savedInstanceState: Bundle?) {

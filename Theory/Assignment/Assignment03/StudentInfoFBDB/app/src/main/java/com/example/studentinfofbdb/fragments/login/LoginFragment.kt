@@ -1,4 +1,4 @@
-package com.example.studentinfofbdb.fragments
+package com.example.studentinfofbdb.fragments.login
 
 import android.os.Bundle
 import android.text.Editable
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.studentinfofbdb.NavigationHost
 import com.example.studentinfofbdb.R
 import com.example.studentinfofbdb.databinding.FragmentLoginBinding
+import com.example.studentinfofbdb.fragments.list.ListFragment
 
 
 class LoginFragment : Fragment() {

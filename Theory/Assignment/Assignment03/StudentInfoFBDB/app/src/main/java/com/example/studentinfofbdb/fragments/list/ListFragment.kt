@@ -1,11 +1,13 @@
-package com.example.studentinfofbdb.fragments
+package com.example.studentinfofbdb.fragments.list
 
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.studentinfofbdb.NavigationHost
 import com.example.studentinfofbdb.R
 import com.example.studentinfofbdb.databinding.FragmentListBinding
+import com.example.studentinfofbdb.fragments.add.AddFragment
 
 
 class ListFragment : Fragment() {
@@ -29,6 +31,12 @@ class ListFragment : Fragment() {
 
         // set up the toolbar
         (activity as AppCompatActivity).setSupportActionBar(binding.appBar)
+
+
+        // floating action button
+        binding.floatingActionButton.setOnClickListener {
+            (activity as NavigationHost).navigateTo(AddFragment(), true)
+        }
 
         return view
     }
