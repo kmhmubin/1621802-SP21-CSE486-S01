@@ -4,10 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.studentinfofbdb.NavigationHost
 import com.example.studentinfofbdb.R
 import com.example.studentinfofbdb.databinding.FragmentListBinding
-import com.example.studentinfofbdb.fragments.add.AddFragment
 
 
 class ListFragment : Fragment() {
