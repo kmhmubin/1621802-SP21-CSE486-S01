@@ -7,4 +7,5 @@
     <string name="enter_your_password">Enter Your Password</string>
     <string name="login_button">Login</string>
     <string name="cancel_button">Cancle</string>
+    <string name="error_password">Please enter 8 characters</string>
 </resources>
