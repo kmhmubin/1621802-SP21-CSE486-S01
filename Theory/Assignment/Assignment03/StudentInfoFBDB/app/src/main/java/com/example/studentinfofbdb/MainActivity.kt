@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
+    // Navigation Back button
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.fragment)
         return navController.navigateUp()
