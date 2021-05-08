@@ -8,11 +8,7 @@ import android.view.ViewGroup
 import com.example.studentinfofbdb.R
 
 
-
-
 class AddFragment : Fragment() {
-
-
 
 
     override fun onCreateView(
