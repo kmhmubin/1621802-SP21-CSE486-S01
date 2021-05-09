@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.studentinfofbdb.R
 import com.example.studentinfofbdb.databinding.FragmentListBinding
 
@@ -21,6 +22,15 @@ class ListFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentListBinding.inflate(inflater, container, false)
         val view = binding.root
+
+
+        /*
+        * Floating action button function for navigate to add fragment
+         */
+        binding.floatingActionButton.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_listFragment_to_addFragment)
+        }
+
 
         return view
     }
