@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="insert_new_student_information">Insert new student information</string>
+    <string name="student_name">Student Name</string>
+    <string name="select_academic_school">Select Academic School</string>
+    <string name="department_name">Department Name</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="phone_number">Phone number</string>
+    <string name="nid_number">NID Number</string>
+    <string name="present_address">Present Address</string>
+    <string name="permanent_address">Permanent Address</string>
+    <string name="submit">Submit</string>
+    <string name="jhon_doe">Jhon Doe</string>
+
+    <string-array name="school_list">
+        <item>School of Business &amp; Economics</item>
+        <item>School of Engineering &amp; Physical Sciences</item>
+        <item>School of Humanities &amp; Social Sciences</item>
+        <item>School of Health &amp; Life Sciences</item>
+    </string-array>
+
+    <string-array name="department_list">
+        <item>Accounting &amp; Finance</item>
+        <item>Economics</item>
+        <item>Management</item>
+        <item>Marketing &amp; International Business</item>
+        <item>MBA &amp; EMBA</item>
+        <item>Architecture</item>
+        <item>Civil &amp; Environmental Engineering</item>
+        <item>Electrical &amp; Computer Engineering</item>
+        <item>Mathematics &amp; Physics</item>
+        <item>English &amp; Modern Languages</item>
+        <item>Political Science &amp; Sociology</item>
+        <item>Law</item>
+        <item>History &amp; Philosophy</item>
+        <item>Biochemistry &amp; Microbiology</item>
+        <item>Environmental Science &amp; Management</item>
+        <item>Pharmaceutical Sciences</item>
+        <item>Public Health</item>
+    </string-array>
+</resources>
