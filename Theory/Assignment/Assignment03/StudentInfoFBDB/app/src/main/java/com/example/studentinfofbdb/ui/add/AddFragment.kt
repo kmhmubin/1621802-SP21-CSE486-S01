@@ -21,6 +21,16 @@ class AddFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentAddBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        /*
+        * Get the string array for school names
+         */
+
+        val schoolNameString = resources.getStringArray(R.array.school_list)
+
+
+
+
         return view
     }
 
