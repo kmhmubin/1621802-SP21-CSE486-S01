@@ -10,7 +10,6 @@ import com.example.studentinfofbdb.R
 
 class ListFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
