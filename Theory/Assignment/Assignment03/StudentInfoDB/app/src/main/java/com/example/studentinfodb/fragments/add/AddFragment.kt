@@ -22,7 +22,6 @@ class AddFragment : Fragment() {
     private var _binding: FragmentAddBinding? = null
     private val binding get() = _binding!!
 
-    private val database = FirebaseDatabase.getInstance().getReference("Student")
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
@@ -93,6 +92,8 @@ class AddFragment : Fragment() {
             val nidNumber = binding.nidNumber.text.toString()
             val presentAddress = binding.presentAddress.text.toString()
             val permanentAddress = binding.permanentAddress.text.toString()
+
+            val database = FirebaseDatabase.getInstance().getReference("Student")
 
             val student = StudentInfo(
                 studentId, studentName, schoolName, departmentName,
