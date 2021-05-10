@@ -43,7 +43,7 @@ class ListFragment : Fragment() {
         database.addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 database.get()
-                
+
             }
 
             override fun onCancelled(error: DatabaseError) {
