@@ -3,21 +3,21 @@ package com.example.studentinfodb.database
 
 data class StudentInfo(
 
-    val studentId: Int,
+    val studentId: String?,
 
-    var studentName: String?,
+    var studentName: String? = null,
 
-    var schoolName: String?,
+    var schoolName: String? = null,
 
-    var departmentName: String?,
+    var departmentName: String? = null,
 
-    var dateOfBirth: String?,
+    var dateOfBirth: String? = null,
 
-    var phoneNumber: String?,
+    var phoneNumber: String? = null,
 
-    var nidNumber: String?,
+    var nidNumber: String? = null,
 
-    var presentAddress: String?,
+    var presentAddress: String? = null,
 
-    var permanentAddress: String?
+    var permanentAddress: String? = null
 )
