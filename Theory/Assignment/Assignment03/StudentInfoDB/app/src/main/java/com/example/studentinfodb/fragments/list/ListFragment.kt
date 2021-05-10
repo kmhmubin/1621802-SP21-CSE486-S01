@@ -9,7 +9,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.studentinfodb.R
 import com.example.studentinfodb.databinding.FragmentListBinding
-
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class ListFragment : Fragment() {
@@ -33,12 +35,9 @@ class ListFragment : Fragment() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-//        // user view model
-//        mStudentViewModel = ViewModelProvider(this).get(StudentViewModel::class.java)
-//        mStudentViewModel.allStudents.observe(viewLifecycleOwner, Observer { studentInfo ->
-//            adapter.setDate(studentInfo)
-//        })
-
+        // Firebase database
+        val database = FirebaseDatabase.getInstance().getReference("Student")
+        database.get()
         // floating action button
         binding.floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.action_listFragment_to_addFragment)
