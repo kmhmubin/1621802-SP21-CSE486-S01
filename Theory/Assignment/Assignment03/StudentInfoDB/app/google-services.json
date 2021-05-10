@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1097679895661",
+    "project_id": "student-info-fbdb",
+    "storage_bucket": "student-info-fbdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097679895661:android:05e86081f566b9b5201364",
+        "android_client_info": {
+          "package_name": "com.example.studentinfodb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097679895661-gh3mupqumfv1ksuga3sq9ssa7q8pfvo0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGWVl-FhLpH_qUoENV-45KCSruRaPynH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097679895661-gh3mupqumfv1ksuga3sq9ssa7q8pfvo0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
