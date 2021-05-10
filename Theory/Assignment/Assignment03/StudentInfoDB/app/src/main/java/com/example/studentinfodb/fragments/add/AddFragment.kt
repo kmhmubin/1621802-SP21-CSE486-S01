@@ -1,5 +1,6 @@
 package com.example.studentinfodb.fragments.add
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,13 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.studentinfodb.R
 import com.example.studentinfodb.database.StudentInfo
 import com.example.studentinfodb.databinding.FragmentAddBinding
-import com.example.studentinfodb.model.StudentViewModel
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.database.FirebaseDatabase
 import java.util.*
 
 
@@ -22,8 +22,9 @@ class AddFragment : Fragment() {
     private var _binding: FragmentAddBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var mStudentViewModel: StudentViewModel
+    private val database = FirebaseDatabase.getInstance().getReference("Student")
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -66,7 +67,8 @@ class AddFragment : Fragment() {
             // open the dialog
             val datePicker = DatePickerDialog(
                 requireContext(),
-                DatePickerDialog.OnDateSetListener { view, selectedYear, selectedMonth, selectedDayOfMonth ->
+                DatePickerDialog.OnDateSetListener { _, selectedYear, selectedMonth,
+                                                     selectedDayOfMonth ->
                     binding.dobText.setText("$selectedDayOfMonth/ ${selectedMonth + 1}/ $selectedYear")
                         .toString()
                 },
@@ -78,13 +80,11 @@ class AddFragment : Fragment() {
             datePicker.show()
         }
 
-        // view model object for student view model
-        mStudentViewModel = ViewModelProvider(this).get(StudentViewModel::class.java)
 
         // save info when submit button pressed
         binding.submitButton.setOnClickListener {
 //            insertDataToDatabase()
-            val studentId = binding.nsuId.text.toString().toInt()
+            val studentId = binding.nsuId.text.toString().trim()
             val studentName = binding.studentName.text.toString()
             val schoolName = binding.schoolSpinner.onItemSelectedListener.toString()
             val departmentName = binding.departmentSpinner.onItemSelectedListener.toString()
@@ -98,7 +98,7 @@ class AddFragment : Fragment() {
                 studentId, studentName, schoolName, departmentName,
                 dateOfBirth, phoneNumber, nidNumber, presentAddress, permanentAddress
             )
-            mStudentViewModel.insert(student)
+            database.child(studentId).setValue(student)
 
             Snackbar.make(
                 requireContext(), binding.addLayout, "Successfully Added", Snackbar
