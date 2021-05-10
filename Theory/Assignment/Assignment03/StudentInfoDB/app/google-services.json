@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1097679895661",
-    "project_id": "student-info-fbdb",
-    "storage_bucket": "student-info-fbdb.appspot.com"
+    "project_number": "854276042007",
+    "project_id": "nsu-cpc-f68c1",
+    "storage_bucket": "nsu-cpc-f68c1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1097679895661:android:05e86081f566b9b5201364",
+        "mobilesdk_app_id": "1:854276042007:android:0d4f52b3951a0631355b52",
         "android_client_info": {
           "package_name": "com.example.studentinfodb"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1097679895661-gh3mupqumfv1ksuga3sq9ssa7q8pfvo0.apps.googleusercontent.com",
+          "client_id": "854276042007-qms51inha34dt38n9t5e4l8hgvbcc9fc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCGWVl-FhLpH_qUoENV-45KCSruRaPynH4"
+          "current_key": "AIzaSyDfwLhiqOnOBMBStqusWN-uqFXnJzA7do0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1097679895661-gh3mupqumfv1ksuga3sq9ssa7q8pfvo0.apps.googleusercontent.com",
+              "client_id": "854276042007-qms51inha34dt38n9t5e4l8hgvbcc9fc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
