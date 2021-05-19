@@ -1,16 +1,54 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.NSUCPCAdmin" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <!-- selection controls -->
+        <item name="colorPrimary">@color/green_500</item>
+        <item name="colorPrimaryVariant">@color/green_700</item>
+        <item name="colorSecondary">@color/green_200</item>
+        <item name="colorSecondaryVariant">@color/green_500</item>
+        <!--text fields.-->
+        <item name="android:colorBackground">@color/white_50</item>
+        <item name="colorSurface">@color/white_50</item>
+        <item name="colorError">@color/red_600</item>
+        <!--on which they appear.-->
+        <item name="colorOnPrimary">@color/white_50</item>
+        <item name="colorOnSecondary">@color/black_900</item>
+        <item name="colorOnBackground">@color/black_900</item>
+        <item name="colorOnSurface">@color/black_900</item>
+        <item name="colorOnError">@color/white_50</item>
+
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarColor" tools:ignore="NewApi">
+            ?android:attr/colorBackground
+        </item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">
+            ?attr/colorControlHighlight
+        </item>
+
+        <!-- Material Type attribute-->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.MdcTypographyStyles.Headline1
+        </item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MdcTypographyStyles.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MdcTypographyStyles.Headline3
+        </item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MdcTypographyStyles.Headline4
+        </item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MdcTypographyStyles.Headline5
+        </item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MdcTypographyStyles.Headline6
+        </item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.MdcTypographyStyles.Subtitle1
+        </item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.MdcTypographyStyles.Subtitle2
+        </item>
+        <item name="textAppearanceBody1">@style/TextAppearance.MdcTypographyStyles.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MdcTypographyStyles.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MdcTypographyStyles.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MdcTypographyStyles.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.MdcTypographyStyles.Overline
+        </item>
     </style>
 </resources>
