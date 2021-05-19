@@ -31,7 +31,8 @@
         <!-- Material Type attribute-->
         <item name="textAppearanceHeadline1">@style/TextAppearance.MdcTypographyStyles.Headline1
         </item>
-        <item name="textAppearanceHeadline2">@style/TextAppearance.MdcTypographyStyles.Headline2</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MdcTypographyStyles.Headline2
+        </item>
         <item name="textAppearanceHeadline3">@style/TextAppearance.MdcTypographyStyles.Headline3
         </item>
         <item name="textAppearanceHeadline4">@style/TextAppearance.MdcTypographyStyles.Headline4
@@ -50,5 +51,10 @@
         <item name="textAppearanceCaption">@style/TextAppearance.MdcTypographyStyles.Caption</item>
         <item name="textAppearanceOverline">@style/TextAppearance.MdcTypographyStyles.Overline
         </item>
+    </style>
+
+    <!--Navigation Drawer-->
+    <style name="Widget.MyTheme.NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <item name="itemTextAppearance">?attr/textAppearanceBody2</item>
     </style>
 </resources>
