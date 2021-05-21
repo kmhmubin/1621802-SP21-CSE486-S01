@@ -2,4 +2,21 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/my_nav" />
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.nsucpcadmin.ui.fragments.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/mailFragment"
+        android:name="com.example.nsucpcadmin.ui.fragments.mail.MailFragment"
+        android:label="fragment_mail"
+        tools:layout="@layout/fragment_mail" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.nsucpcadmin.ui.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
