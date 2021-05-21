@@ -1,15 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white_80"
     tools:context=".ui.fragments.home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home Fragment" />
+<!-- Post a new job card-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/postNewJobCard"
+        android:layout_width="0dp"
+        android:layout_height="174dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/light_green_200"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="@dimen/elevation_default_top_app_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/postNewJobText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:text="@string/post_a_new_job"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline5"
+                android:textColor="@color/blue_500"
+                android:typeface="normal" />
+
+            <TextView
+                android:layout_width="187dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/postNewJobText"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/eczar"
+                android:lineSpacingExtra="@dimen/keyline_0"
+                android:text="@string/open_the_door_of_new_opportunity"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+                android:textColor="@color/gray_80"
+                android:typeface="normal" />
+
+            <ImageView
+                android:layout_width="129dp"
+                android:layout_height="138dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="203dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="15dp"
+                android:contentDescription="@string/post_a_new_job"
+                android:maxHeight="138dp"
+                android:src="@drawable/ic_desk" />
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,4 +20,5 @@
     <!--Color on secondary (light), color on background (light),-->
     <!--color on surface (light)-->
     <color name="black_900">#FF000000</color>
+    <color name="gray_80">#FF3A3A3A</color>
 </resources>

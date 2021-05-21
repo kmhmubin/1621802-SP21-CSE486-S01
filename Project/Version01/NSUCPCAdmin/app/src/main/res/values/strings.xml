@@ -5,4 +5,6 @@
     <string name="home">Home</string>
     <string name="mail">Mail</string>
     <string name="profile">Profile</string>
+    <string name="post_a_new_job">Post a new job</string>
+    <string name="open_the_door_of_new_opportunity">Open the door of new opportunity</string>
 </resources>
