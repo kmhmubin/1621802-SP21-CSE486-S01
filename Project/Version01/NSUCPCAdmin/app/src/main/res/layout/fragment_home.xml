@@ -145,7 +145,7 @@
         app:cardElevation="@dimen/elevation_default_top_app_bar"
         app:layout_constraintBottom_toBottomOf="@+id/cpcListCard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cpcListCard" >
+        app:layout_constraintTop_toTopOf="@+id/cpcListCard">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -212,7 +212,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
-    
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

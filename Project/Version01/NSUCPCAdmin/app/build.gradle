@@ -52,8 +52,10 @@ dependencies {
     implementation "androidx.navigation:navigation-compose:2.4.0-alpha01"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     // shimmer effect on recycler view
-//    implementation 'com.facebook.shimmer:shimmer:0.5.0'
-//    implementation 'com.todkars:shimmer-recyclerview:0.4.1'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    implementation 'com.todkars:shimmer-recyclerview:0.4.1'
+// circle image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

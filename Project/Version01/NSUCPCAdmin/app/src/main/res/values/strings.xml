@@ -12,4 +12,7 @@
     <string name="students">Students</string>
     <string name="recently_added">Recently added</string>
     <string name="see_all">SEE ALL</string>
+    <string name="card_company_name">Company Name</string>
+    <string name="card_job_position">Job Position</string>
+    <string name="card_job_type">Job Type</string>
 </resources>
