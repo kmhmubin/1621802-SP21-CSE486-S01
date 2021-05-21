@@ -7,16 +7,16 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.nsucpcadmin.ui.fragments.home.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/mailFragment"
         android:name="com.example.nsucpcadmin.ui.fragments.mail.MailFragment"
-        android:label="fragment_mail"
+        android:label="Mail"
         tools:layout="@layout/fragment_mail" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.nsucpcadmin.ui.fragments.profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
