@@ -19,7 +19,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-//        jcenter()
+        jcenter()
         mavenCentral()
          // Warning: this repository is going to shut down soon
     }

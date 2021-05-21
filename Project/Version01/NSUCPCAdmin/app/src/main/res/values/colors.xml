@@ -22,4 +22,5 @@
     <color name="black_900">#FF000000</color>
     <color name="gray_80">#FF3A3A3A</color>
     <color name="gray_60">#FFA6A6AA</color>
+    <color name="gray_40">#FFCBCBD4</color>
 </resources>

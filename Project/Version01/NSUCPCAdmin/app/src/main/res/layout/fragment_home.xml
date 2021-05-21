@@ -43,12 +43,16 @@
                 android:typeface="normal" />
 
             <TextView
+                android:id="@+id/openDoorText"
                 android:layout_width="187dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/postNewJobText"
+                android:layout_alignStart="@+id/postNewJobText"
+                android:layout_alignEnd="@+id/postNewJobText"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="-48dp"
                 android:layout_marginBottom="15dp"
                 android:fontFamily="@font/eczar"
                 android:lineSpacingExtra="@dimen/keyline_0"
@@ -58,13 +62,15 @@
                 android:typeface="normal" />
 
             <ImageView
+                android:id="@+id/deskImage"
                 android:layout_width="129dp"
                 android:layout_height="138dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="203dp"
+                android:layout_marginStart="47dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="15dp"
+                android:layout_toEndOf="@+id/postNewJobText"
                 android:contentDescription="@string/post_a_new_job"
                 android:maxHeight="138dp"
                 android:src="@drawable/ic_desk" />
@@ -212,7 +218,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
+        <com.todkars.shimmer.ShimmerRecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            app:shimmer_recycler_item_count="3"
+            app:shimmer_recycler_layout="@layout/placeholder_job_card_layout" />
+
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
