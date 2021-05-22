@@ -1,15 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white_80"
     tools:context=".ui.fragments.profile.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="30dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_profile_avater"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile Fragment" />
+        android:id="@+id/profileUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/roboto_condensed_regular"
+        android:letterSpacing="0.01"
+        android:text="@string/profile_user_name"
+        android:textColor="@color/blue_500"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/profileImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profileImage"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/profileUserPosition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_condensed_regular"
+        android:letterSpacing="0.01"
+        android:text="@string/profile_user_position"
+        android:textAllCaps="true"
+        android:textColor="@color/gray_80"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/profileImage"
+        app:layout_constraintEnd_toEndOf="@+id/profileUserName"
+        app:layout_constraintStart_toStartOf="@+id/profileUserName"
+        app:layout_constraintTop_toBottomOf="@+id/profileUserName" />
+
+    <!--  Profile page buttons  -->
+
+    <TextView
+        android:id="@+id/profileEditButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="24dp"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/roboto_condensed_regular"
+        android:text="@string/profile_edit_profile_button"
+        android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline6"
+        android:textColor="@color/black_900"
+        android:typeface="normal"
+        app:drawableStartCompat="@drawable/ic_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+
+    <TextView
+        android:id="@+id/profileLanguageButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="24dp"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/roboto_condensed_regular"
+        android:text="@string/profile_language_button"
+        android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline6"
+        android:textColor="@color/black_900"
+        android:typeface="normal"
+        app:drawableStartCompat="@drawable/ic_language"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/profileEditButton" />
+
+    <TextView
+        android:id="@+id/profileAboutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="24dp"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/roboto_condensed_regular"
+        android:text="@string/profile_about_button"
+        android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline6"
+        android:textColor="@color/black_900"
+        android:typeface="normal"
+        app:drawableStartCompat="@drawable/ic_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/profileLanguageButton" />
+
+    <TextView
+        android:id="@+id/profileSignOutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="24dp"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/roboto_condensed_regular"
+        android:text="@string/profile_sign_out_button"
+        android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline6"
+        android:textColor="@color/black_900"
+        android:typeface="normal"
+        app:drawableStartCompat="@drawable/ic_sign_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/profileAboutButton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
