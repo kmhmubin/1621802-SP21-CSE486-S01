@@ -15,4 +15,7 @@
     <string name="card_company_name">Company Name</string>
     <string name="card_job_position">Job Position</string>
     <string name="card_job_type">Job Type</string>
+    <string name="mail_sender_name">Sender Name</string>
+    <string name="mail_job_position">Job Position</string>
+    <string name="mail_option_menu_icon">⋮</string>
 </resources>
