@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.nsucpcadmin.R
 import com.example.nsucpcadmin.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -16,13 +15,13 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
         // show recycler view with shimmer effect
-        binding.recyclerview.showShimmer()
+        binding.recyclerviewJobCard.showShimmer()
 
 
 

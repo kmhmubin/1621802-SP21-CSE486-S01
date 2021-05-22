@@ -5,18 +5,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.nsucpcadmin.R
+import com.example.nsucpcadmin.databinding.FragmentMailBinding
 
 
 class MailFragment : Fragment() {
 
+    private lateinit var _binding: FragmentMailBinding
+    private val binding get() = _binding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mail, container, false)
+        _binding = FragmentMailBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+        // show the mail recycler view with shimmer effect
+        binding.recyclerviewMailCard.showShimmer()
+
+
+        return view
     }
 
-    
+
 }

@@ -232,7 +232,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <com.todkars.shimmer.ShimmerRecyclerView
-            android:id="@+id/recyclerview"
+            android:id="@+id/recyclerviewJobCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
