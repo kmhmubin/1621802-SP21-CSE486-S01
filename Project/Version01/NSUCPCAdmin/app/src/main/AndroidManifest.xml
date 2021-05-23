@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NSUCPCAdmin">
         <activity
+            android:name=".ui.activities.auth.ForgetPasswordActivity"
+            android:theme="@style/Theme.NoActionBar" />
+        <activity
             android:name=".ui.activities.auth.LoginActivity"
             android:theme="@style/Theme.NoActionBar" />
         <activity

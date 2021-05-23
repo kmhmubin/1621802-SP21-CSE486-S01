@@ -42,4 +42,7 @@
     <string name="sign_in_button_text">Sign In</string>
     <string name="don_t_have_an_account_text">Don\'t have an account?</string>
     <string name="sign_up_text_link"><u>Sign Up</u></string>
+    <string name="forget_password_page_text">FORGET PASSWORD</string>
+    <string name="forget_password_message">Enter your email address below to rest your password</string>
+    <string name="forget_password_send_button_text">Send</string>
 </resources>
