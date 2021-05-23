@@ -24,4 +24,8 @@
     <string name="profile_language_button">Language</string>
     <string name="profile_about_button">About</string>
     <string name="profile_sign_out_button">Sign out</string>
+    <string name="splash_admin_dashboard">ADMIN DASHBOARD</string>
+    <string name="splash_already_have_an_account">Already have an account?</string>
+    <string name="splash_log_in"><u>Log in</u></string>
+    <string name="splash_sign_up_button_text">Sign up</string>
 </resources>

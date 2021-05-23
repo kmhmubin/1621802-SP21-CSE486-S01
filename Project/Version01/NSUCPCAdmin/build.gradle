@@ -2,6 +2,9 @@
 buildscript {
     ext.kotlin_version = "1.5.0"
     ext.nav_version = "2.3.5"
+    ext.lifecycle_version = "2.3.1"
+    ext.arch_version = "2.1.0"
+    ext.lottieVersion = "3.7.0"
     repositories {
         google()
         mavenCentral()
@@ -23,7 +26,7 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
-         // Warning: this repository is going to shut down soon
+        // Warning: this repository is going to shut down soon
     }
 }
 
