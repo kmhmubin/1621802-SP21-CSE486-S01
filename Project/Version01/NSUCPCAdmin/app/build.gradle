@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id "androidx.navigation.safeargs.kotlin"
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -54,8 +56,20 @@ dependencies {
     // shimmer effect on recycler view
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
     implementation 'com.todkars:shimmer-recyclerview:0.4.1'
-// circle image view
+    // circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:28.0.1')
+    // Firebase analytics & crashlytics
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    // Firebase auth
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    // cloud Firestore
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    // Firebase cloud storage
+    implementation 'com.google.firebase:firebase-storage-ktx'
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
