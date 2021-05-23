@@ -2,7 +2,6 @@ package com.example.nsucpcadmin.ui.activities.splash
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.nsucpcadmin.R
 import com.example.nsucpcadmin.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
