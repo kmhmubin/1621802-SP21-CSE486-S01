@@ -1,8 +1,10 @@
 package com.example.nsucpcadmin.ui.activities.splash
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.nsucpcadmin.databinding.ActivitySplashBinding
+import com.example.nsucpcadmin.ui.activities.auth.SignupActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -16,7 +18,13 @@ class SplashActivity : AppCompatActivity() {
         // lottie animation
         binding.logoLottieAnimation.playAnimation()
 
-
+        /*
+        * goto [SignupActivity] when [splashSignUpButton] pressed
+         */
+        binding.splashSignUpButton.setOnClickListener {
+            startActivity(Intent(this, SignupActivity::class.java))
+            finish()
+        }
 
         setContentView(view)
     }
