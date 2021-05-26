@@ -1,5 +1,9 @@
 package com.example.nsucpcadmin.data.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class AdminUser(
     val id: String = "",
     val name: String = "",
@@ -10,4 +14,4 @@ data class AdminUser(
     val gender: String = "",
     val present_address: String = "",
     val profileComplete: Int = 0
-)
+) : Parcelable
