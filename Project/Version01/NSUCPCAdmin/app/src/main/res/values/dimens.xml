@@ -8,4 +8,6 @@
 
     <dimen name="component_label_horizontal_margin">@dimen/keyline_4</dimen>
     <dimen name="elevation_default_top_app_bar">4dp</dimen>
+    <dimen name="gender_button_radius">10dp</dimen>
+    <dimen name="gender_button_radius_stroke">1dp</dimen>
 </resources>
