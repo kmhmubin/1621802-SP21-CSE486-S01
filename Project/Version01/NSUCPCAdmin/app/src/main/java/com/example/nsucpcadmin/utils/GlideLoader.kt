@@ -7,12 +7,11 @@ import com.bumptech.glide.Glide
 import com.example.nsucpcadmin.R
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import java.io.IOException
-import java.net.URI
 
 class GlideLoader(val context: Context) {
 
     // function to load image from url for the user profile image
-    fun loadUserPicture(imageURI: URI, imageView: ImageView) {
+    fun loadUserPicture(imageURI: Uri, imageView: ImageView) {
         try {
             // load the user image in the Imageview
             Glide.with(context)

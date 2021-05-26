@@ -20,6 +20,7 @@ object Constants {
     const val FEMALE: String = "Female"
     const val MOBILE: String = "mobile"
     const val GENDER: String = "gender"
+    const val PRESENT_ADDRESS: String = "present_address"
 
 
     /*

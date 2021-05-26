@@ -7,6 +7,7 @@ import android.util.Log
 import com.example.nsucpcadmin.data.model.AdminUser
 import com.example.nsucpcadmin.ui.activities.auth.LoginActivity
 import com.example.nsucpcadmin.ui.activities.auth.SignupActivity
+import com.example.nsucpcadmin.ui.activities.editprofile.EditProfileActivity
 import com.example.nsucpcadmin.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.crashlytics.FirebaseCrashlytics
@@ -106,5 +107,33 @@ class FirebaseSource {
             }
     }
 
+
+    /*
+    * function for update the user details
+     */
+
+    fun updateUserProfileData(activity: Activity, userHashMap: HashMap<String, Any>) {
+        // collection name
+        mFireStore.collection(Constants.USER)
+            .document(getCurrentUserID())
+            .update(userHashMap)
+            .addOnSuccessListener {
+                when (activity) {
+                    is EditProfileActivity -> {
+                        activity.userProfileUpdateSuccess()
+                    }
+                }
+            }
+            .addOnFailureListener {
+                when (activity) {
+                    is EditProfileActivity -> {
+                        activity.hideProgressBar()
+                    }
+                }
+
+                FirebaseCrashlytics.getInstance().log("Error while updating the user details")
+
+            }
+    }
 
 }

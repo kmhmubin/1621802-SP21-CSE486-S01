@@ -5,14 +5,18 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.nsucpcadmin.MainActivity
+import com.example.nsucpcadmin.data.firebase.FirebaseSource
 import com.example.nsucpcadmin.data.model.AdminUser
 import com.example.nsucpcadmin.databinding.ActivityEditProfileBinding
 import com.example.nsucpcadmin.ui.activities.base.BaseActivity
 import com.example.nsucpcadmin.utils.Constants
+import com.example.nsucpcadmin.utils.GlideLoader
 import java.io.IOException
 
 class EditProfileActivity : BaseActivity(), View.OnClickListener {
@@ -45,12 +49,16 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         // user photo click event
         binding.editProfileUserPhoto.setOnClickListener(this)
 
+        // save button click event
+        binding.editProfileSaveButton.setOnClickListener(this)
+
         setContentView(view)
     }
 
     override fun onClick(view: View) {
         if (view != null) {
             when (view) {
+                // user profile image
                 binding.editProfileUserPhoto -> {
                     if (ContextCompat.checkSelfPermission(
                             this,
@@ -66,13 +74,50 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                         )
                     }
                 }
+
+                // save button
+                binding.editProfileSaveButton -> {
+                    if (validateUserProfileDetails()) {
+                        // create a hashmap of user for upload
+                        val userHashMap = HashMap<String, Any>()
+
+                        // entry fields
+                        val phone: String = binding.editProfilePhoneEditText.text.toString().trim()
+
+                        val gender = if (binding.radioButtonMale.isChecked) {
+                            Constants.MALE
+                        } else {
+                            Constants.FEMALE
+                        }
+
+                        val presentAddress: String =
+                            binding.editProfileAddressEditText.text.toString().trim()
+
+                        if (phone.isNotEmpty()) {
+                            userHashMap[Constants.MOBILE] = phone.toLong()
+                        }
+
+                        userHashMap[Constants.GENDER] = gender
+
+                        if (presentAddress.isNotEmpty()) {
+                            userHashMap[Constants.PRESENT_ADDRESS] = presentAddress
+                        }
+
+                        // show progress bar
+                        showProgressBar()
+
+                        // call the update user function of FirebaseSource class to make entry to database
+                        FirebaseSource().updateUserProfileData(this, userHashMap)
+
+                    }
+                }
             }
         }
     }
 
 
     /*
-    * runtime permission
+    * runtime permission check function
      */
 
     override fun onRequestPermissionsResult(
@@ -93,7 +138,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
     }
 
     /*
-    *
+    * function for image load from storage
      */
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -104,7 +149,11 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                     try {
                         // The uri of selected image from phone storage.
                         val selectedImageFileUri = data.data!!
-                        binding.editProfileUserPhoto.setImageURI(selectedImageFileUri)
+
+                        // Use GlideLoader
+                        GlideLoader(this).loadUserPicture(
+                            selectedImageFileUri, binding.editProfileUserPhoto
+                        )
 
                     } catch (e: IOException) {
                         e.printStackTrace()
@@ -116,7 +165,45 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                             .show()
                     }
                 }
+
+            }
+        } else if (resultCode == Activity.RESULT_CANCELED) {
+            Log.e("Request Cancelled", "Image selection cancelled")
+        }
+    }
+
+    /*
+    *  function for validate the inputs
+     */
+    private fun validateUserProfileDetails(): Boolean {
+        return when {
+            binding.editProfilePhoneEditText.text.toString().trim().isEmpty() -> {
+                binding.editProfilePhoneTextLayout.error = "Please enter valid phone number"
+                false
+            }
+            binding.editProfileAddressEditText.text.toString().trim().isEmpty() -> {
+                binding.editProfileAddressTextLayout.error = "Please enter your address"
+                false
+            }
+            else -> {
+                true
             }
         }
     }
+
+
+    /*
+    * function to notify the success result
+     */
+    fun userProfileUpdateSuccess() {
+        hideProgressBar()
+
+        showSnackBar("Profile Update Successful", false)
+
+        // redirect to main screen
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
+    }
+
+
 }
