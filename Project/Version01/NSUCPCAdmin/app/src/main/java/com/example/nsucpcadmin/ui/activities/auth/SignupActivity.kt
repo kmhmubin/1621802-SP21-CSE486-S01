@@ -4,8 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.nsucpcadmin.databinding.ActivitySignupBinding
+import com.example.nsucpcadmin.ui.activities.base.BaseActivity
 
-class SignupActivity : AppCompatActivity() {
+class SignupActivity : BaseActivity() {
 
     private lateinit var binding: ActivitySignupBinding
     override fun onCreate(savedInstanceState: Bundle?) {
