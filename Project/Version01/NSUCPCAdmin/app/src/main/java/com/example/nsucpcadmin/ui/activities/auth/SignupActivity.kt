@@ -1,7 +1,6 @@
 package com.example.nsucpcadmin.ui.activities.auth
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.nsucpcadmin.data.firebase.FirebaseSource
 import com.example.nsucpcadmin.data.model.AdminUser
@@ -102,8 +101,6 @@ class SignupActivity : BaseActivity() {
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
                     OnCompleteListener<AuthResult> { task ->
-                        // hide the progress bar
-                        hideProgressBar()
 
                         // if register is successful
                         if (task.isSuccessful) {
@@ -118,10 +115,12 @@ class SignupActivity : BaseActivity() {
                                 binding.signupUserIDEditText.text.toString().trim()
                             )
                             // pass the values in the constructor
-                            FirebaseSource()
+                            FirebaseSource().registerUser(this, user)
 
 
                         } else {
+                            // hide the progress bar
+                            hideProgressBar()
                             // show error message
                             showSnackBar(task.exception!!.message.toString(), true)
                             // save error in crashlytics
