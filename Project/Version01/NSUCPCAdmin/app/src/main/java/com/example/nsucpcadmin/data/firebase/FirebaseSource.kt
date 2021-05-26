@@ -1,9 +1,9 @@
 package com.example.nsucpcadmin.data.firebase
 
-import androidx.compose.ui.unit.Constraints
 import com.example.nsucpcadmin.data.model.AdminUser
 import com.example.nsucpcadmin.ui.activities.auth.SignupActivity
 import com.example.nsucpcadmin.utils.Constants
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
@@ -35,4 +35,22 @@ class FirebaseSource {
                 FirebaseCrashlytics.getInstance().recordException(e)
             }
     }
+
+    /*
+    * Function to get the current user
+     */
+
+    fun getCurrentUserID(): String {
+        // Instance of currentUser using Firebase Auth
+        val currentUser = FirebaseAuth.getInstance().currentUser
+
+        // variable to assign the currentUserID if it is not null
+        var currentUserID = ""
+        if (currentUser != null) {
+            currentUserID = currentUser.uid
+        }
+        return currentUserID
+    }
+
+
 }
