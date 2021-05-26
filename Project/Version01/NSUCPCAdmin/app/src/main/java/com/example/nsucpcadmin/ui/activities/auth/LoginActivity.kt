@@ -10,6 +10,7 @@ import com.example.nsucpcadmin.data.model.AdminUser
 import com.example.nsucpcadmin.databinding.ActivityLoginBinding
 import com.example.nsucpcadmin.ui.activities.base.BaseActivity
 import com.example.nsucpcadmin.ui.activities.editprofile.EditProfileActivity
+import com.example.nsucpcadmin.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : BaseActivity(), View.OnClickListener {
@@ -120,6 +121,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
         if (user.profileComplete == 0) {
             // if the user profile incomplete
             val intent = Intent(this, EditProfileActivity::class.java)
+            intent.putExtra(Constants.EXTRA_USER_DETAILS, user)
             startActivity(intent)
         } else {
             //  goto main activity
