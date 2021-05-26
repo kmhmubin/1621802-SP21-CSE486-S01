@@ -1,13 +1,15 @@
 package com.example.nsucpcadmin
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.nsucpcadmin.databinding.ActivityMainBinding
+import com.example.nsucpcadmin.utils.Constants
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
@@ -17,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        // shared prefs
+        val sharedPreferences =
+            getSharedPreferences(Constants.NSU_CPC_ADMIN_PREFERENCES, Context.MODE_PRIVATE)
+        val userName = sharedPreferences.getString(Constants.LOGGED_IN_USERNAME, "")
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
