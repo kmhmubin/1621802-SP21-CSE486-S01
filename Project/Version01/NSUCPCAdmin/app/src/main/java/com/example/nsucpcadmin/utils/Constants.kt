@@ -2,7 +2,9 @@ package com.example.nsucpcadmin.utils
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.provider.MediaStore
+import android.webkit.MimeTypeMap
 
 object Constants {
 
@@ -21,6 +23,7 @@ object Constants {
     const val MOBILE: String = "mobile"
     const val GENDER: String = "gender"
     const val PRESENT_ADDRESS: String = "present_address"
+    const val USER_PROFILE_IMAGE: String = "user_profile_image"
 
 
     /*
@@ -35,4 +38,14 @@ object Constants {
         // lunches the image selection of phone storage
         activity.startActivityForResult(galleryIntent, PICK_IMAGE_REQUEST_CODE)
     }
+
+    /*
+    * Function to get image file extension of selected image
+     */
+
+    fun getFileExtension(activity: Activity, uri: Uri?): String? {
+        return MimeTypeMap.getSingleton()
+            .getExtensionFromMimeType(activity.contentResolver.getType(uri!!))
+    }
+
 }

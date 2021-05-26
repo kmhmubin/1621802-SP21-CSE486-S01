@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -22,7 +23,13 @@ import java.io.IOException
 class EditProfileActivity : BaseActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityEditProfileBinding
+
+    // admin user data class
     private lateinit var mUserDetails: AdminUser
+
+    // variable for URI of the selected images
+    private var mSelectedImageFileUri: Uri? = null
+    private var mUserProfileImageURL: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -148,11 +155,11 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                 if (data != null) {
                     try {
                         // The uri of selected image from phone storage.
-                        val selectedImageFileUri = data.data!!
+                        mSelectedImageFileUri = data.data!!
 
                         // Use GlideLoader
                         GlideLoader(this).loadUserPicture(
-                            selectedImageFileUri, binding.editProfileUserPhoto
+                            mSelectedImageFileUri!!, binding.editProfileUserPhoto
                         )
 
                     } catch (e: IOException) {
