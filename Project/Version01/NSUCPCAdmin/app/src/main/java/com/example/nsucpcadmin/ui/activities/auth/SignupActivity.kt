@@ -30,7 +30,7 @@ class SignupActivity : BaseActivity() {
         * Register button click function
          */
         binding.signupButton.setOnClickListener {
-            validateRegisterDetails()
+            registerUser()
         }
 
         setContentView(view)
