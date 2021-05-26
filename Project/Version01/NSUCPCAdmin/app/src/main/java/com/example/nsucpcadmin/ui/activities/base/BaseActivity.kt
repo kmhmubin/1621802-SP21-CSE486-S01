@@ -1,21 +1,24 @@
 package com.example.nsucpcadmin.ui.activities.base
 
 import android.app.Dialog
+import android.os.Handler
+import android.os.Looper
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.ProgressBar
 import androidx.core.content.ContextCompat
 import com.example.nsucpcadmin.R
-import com.google.android.material.progressindicator.BaseProgressIndicator
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.snackbar.Snackbar.*
+import com.google.android.material.snackbar.Snackbar.LENGTH_LONG
 
 open class BaseActivity : AppCompatActivity() {
+
+    private var doubleBackToExitPressedOnce = false
+    private lateinit var mProgressDialog: Dialog
+
 
     /*
     * show progressbar indicator
      */
-    private lateinit var mProgressDialog: Dialog
     fun showProgressBar() {
         mProgressDialog = Dialog(this)
         /*
@@ -55,4 +58,24 @@ open class BaseActivity : AppCompatActivity() {
         // show the snack bar
         snackBar.show()
     }
+
+    /*
+    * function to implement the double back press feature to exit the app
+     */
+
+    fun doubleBackToExit() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed()
+            return
+        }
+        this.doubleBackToExitPressedOnce = true
+        Toast.makeText(this, "Please Click back again to exit", Toast.LENGTH_LONG).show()
+
+        Handler(Looper.getMainLooper()).postDelayed(
+            {
+                doubleBackToExitPressedOnce = false
+            }, 2000
+        )
+    }
+
 }
