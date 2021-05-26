@@ -11,7 +11,7 @@ import java.io.IOException
 class GlideLoader(val context: Context) {
 
     // function to load image from url for the user profile image
-    fun loadUserPicture(imageURI: Uri, imageView: ImageView) {
+    fun loadUserPicture(imageURI: Any, imageView: ImageView) {
         try {
             // load the user image in the Imageview
             Glide.with(context)

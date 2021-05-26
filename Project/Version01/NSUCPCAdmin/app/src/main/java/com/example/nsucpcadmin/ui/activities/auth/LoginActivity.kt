@@ -114,9 +114,6 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
         // hide the progress bar
         hideProgressBar()
 
-        // print the details in the log
-        Log.i("Name", user.name)
-        Log.i("email", user.email)
 
         if (user.profileComplete == 0) {
             // if the user profile incomplete

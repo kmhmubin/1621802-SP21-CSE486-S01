@@ -10,8 +10,8 @@ data class AdminUser(
     val email: String = "",
     val nsu_id: String = "",
     val image: String = "",
-    val mobile: String = "",
+    val mobile: Long = 0,
     val gender: String = "",
     val present_address: String = "",
-    val profileComplete: Int = 0
+    val profileCompleted: Int = 0
 ) : Parcelable

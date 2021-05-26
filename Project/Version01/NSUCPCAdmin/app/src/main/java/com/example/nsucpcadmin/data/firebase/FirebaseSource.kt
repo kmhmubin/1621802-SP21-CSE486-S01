@@ -3,6 +3,7 @@ package com.example.nsucpcadmin.data.firebase
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import android.net.Uri
 import android.util.Log
 import com.example.nsucpcadmin.data.model.AdminUser
 import com.example.nsucpcadmin.ui.activities.auth.LoginActivity
@@ -13,6 +14,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class FirebaseSource {
 
@@ -135,5 +138,60 @@ class FirebaseSource {
 
             }
     }
+
+
+    /*
+    * Function to upload the image to the cloud storage
+     */
+
+    fun uploadImageToCloudStorage(activity: Activity, imageFileURI: Uri?) {
+        // getting the storage reference
+        val sRef: StorageReference = FirebaseStorage.getInstance().reference
+            .child(
+                Constants.USER_PROFILE_IMAGE + System.currentTimeMillis() + "." + Constants.getFileExtension(
+                    activity,
+                    imageFileURI
+                )
+            )
+
+        // adding the file to reference
+        sRef.putFile(imageFileURI!!)
+            .addOnSuccessListener { taskSnapshot ->
+                // image upload successful
+                Log.e(
+                    "Firebase Image URL",
+                    taskSnapshot.metadata!!.reference!!.downloadUrl.toString()
+                )
+
+                // get the downloadable ul from the task snapshot
+                taskSnapshot.metadata!!.reference!!.downloadUrl
+                    .addOnSuccessListener { uri ->
+                        Log.e("Downloadable Image URL", uri.toString())
+
+                        // call a function of base activity for transferring the result to it
+                        when (activity) {
+                            is EditProfileActivity -> {
+                                activity.imageUploadSuccess(uri.toString())
+                            }
+                        }
+                    }
+            }
+            .addOnFailureListener { exception ->
+                when (activity) {
+                    is EditProfileActivity -> {
+                        activity.hideProgressBar()
+                    }
+                }
+
+                FirebaseCrashlytics.getInstance()
+                    .log("Image upload failed")
+                FirebaseCrashlytics.getInstance()
+                    .setCustomKey("Image upload error", exception.toString())
+                FirebaseCrashlytics.getInstance().recordException(exception)
+            }
+
+
+    }
+
 
 }

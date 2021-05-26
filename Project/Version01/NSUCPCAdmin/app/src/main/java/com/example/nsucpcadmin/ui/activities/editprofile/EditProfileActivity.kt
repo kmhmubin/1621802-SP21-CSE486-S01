@@ -22,14 +22,14 @@ import java.io.IOException
 
 class EditProfileActivity : BaseActivity(), View.OnClickListener {
 
-    private lateinit var binding: ActivityEditProfileBinding
-
     // admin user data class
     private lateinit var mUserDetails: AdminUser
 
     // variable for URI of the selected images
     private var mSelectedImageFileUri: Uri? = null
     private var mUserProfileImageURL: String = ""
+
+    private lateinit var binding: ActivityEditProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,16 +42,37 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
             mUserDetails = intent.getParcelableExtra(Constants.EXTRA_USER_DETAILS)!!
         }
 
-        // show values in the field
+        // if the profile incomplete
+        if (mUserDetails.profileComplete == 0) {
+            // show values in the field
 
-        binding.editProfileNameEditText.isEnabled = false
-        binding.editProfileNameEditText.setText(mUserDetails.name)
+            binding.editProfileNameEditText.isEnabled = false
+            binding.editProfileNameEditText.setText(mUserDetails.name)
 
-        binding.editProfileEmailEditText.isEnabled = false
-        binding.editProfileEmailEditText.setText(mUserDetails.email)
+            binding.editProfileEmailEditText.isEnabled = false
+            binding.editProfileEmailEditText.setText(mUserDetails.email)
 
-        binding.editProfileIDEditText.isEnabled = false
-        binding.editProfileIDEditText.setText(mUserDetails.nsu_id)
+            binding.editProfileIDEditText.isEnabled = false
+            binding.editProfileIDEditText.setText(mUserDetails.nsu_id)
+        } else {
+            // Load the image using GlideLoader class
+            GlideLoader(this).loadUserPicture(mUserDetails.image, binding.editProfileUserPhoto)
+
+            binding.editProfileNameEditText.setText(mUserDetails.name)
+            binding.editProfileEmailEditText.isEnabled = false
+            binding.editProfileEmailEditText.setText(mUserDetails.email)
+
+            if (mUserDetails.mobile != 0L) {
+                binding.editProfilePhoneEditText.setText(mUserDetails.mobile.toString())
+            }
+            if (mUserDetails.gender == Constants.MALE) {
+                binding.radioButtonMale.isChecked = true
+            } else {
+                binding.radioButtonFemale.isChecked = true
+            }
+
+        }
+
 
         // user photo click event
         binding.editProfileUserPhoto.setOnClickListener(this)
@@ -85,37 +106,15 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
                 // save button
                 binding.editProfileSaveButton -> {
                     if (validateUserProfileDetails()) {
-                        // create a hashmap of user for upload
-                        val userHashMap = HashMap<String, Any>()
-
-                        // entry fields
-                        val phone: String = binding.editProfilePhoneEditText.text.toString().trim()
-
-                        val gender = if (binding.radioButtonMale.isChecked) {
-                            Constants.MALE
-                        } else {
-                            Constants.FEMALE
-                        }
-
-                        val presentAddress: String =
-                            binding.editProfileAddressEditText.text.toString().trim()
-
-                        if (phone.isNotEmpty()) {
-                            userHashMap[Constants.MOBILE] = phone.toLong()
-                        }
-
-                        userHashMap[Constants.GENDER] = gender
-
-                        if (presentAddress.isNotEmpty()) {
-                            userHashMap[Constants.PRESENT_ADDRESS] = presentAddress
-                        }
 
                         // show progress bar
                         showProgressBar()
 
-                        // call the update user function of FirebaseSource class to make entry to database
-                        FirebaseSource().updateUserProfileData(this, userHashMap)
-
+                        if (mSelectedImageFileUri != null) {
+                            FirebaseSource().uploadImageToCloudStorage(this, mSelectedImageFileUri)
+                        } else {
+                            updateUserProfileDetails()
+                        }
                     }
                 }
             }
@@ -198,6 +197,54 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
+    /*
+    * function to update the user profile details to the firestore
+     */
+
+    private fun updateUserProfileDetails() {
+        // create a hashmap of user for upload
+        val userHashMap = HashMap<String, Any>()
+
+        // if user edit profile details instead of complete profile
+        val name: String = binding.editProfileNameEditText.text.toString().trim()
+        val phone: String = binding.editProfilePhoneEditText.text.toString().trim()
+
+        val gender = if (binding.radioButtonMale.isChecked) {
+            Constants.MALE
+        } else {
+            Constants.FEMALE
+        }
+
+        val presentAddress: String =
+            binding.editProfileAddressEditText.text.toString().trim()
+
+        if (name != mUserDetails.name) {
+            userHashMap[Constants.NAME] = name
+        }
+
+        if (phone.isNotEmpty()) {
+            userHashMap[Constants.MOBILE] = phone.toLong()
+        }
+
+        userHashMap[Constants.GENDER] = gender
+
+        if (presentAddress.isNotEmpty()) {
+            userHashMap[Constants.PRESENT_ADDRESS] = presentAddress
+        }
+
+        if (mUserProfileImageURL.isNotEmpty()) {
+            userHashMap[Constants.IMAGE] = mUserProfileImageURL
+        }
+
+        if (mUserDetails.profileComplete == 0) {
+            userHashMap[Constants.COMPLETE_PROFILE] = 1
+        }
+
+        // call the update user function of FirebaseSource class to make entry to database
+        FirebaseSource().updateUserProfileData(this, userHashMap)
+
+
+    }
 
     /*
     * function to notify the success result
@@ -210,6 +257,15 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         // redirect to main screen
         startActivity(Intent(this, MainActivity::class.java))
         finish()
+    }
+
+    /*
+    * function to notify the success result of image upload to the cloud
+     */
+
+    fun imageUploadSuccess(imageURL: String) {
+        mUserProfileImageURL = imageURL
+        updateUserProfileDetails()
     }
 
 
