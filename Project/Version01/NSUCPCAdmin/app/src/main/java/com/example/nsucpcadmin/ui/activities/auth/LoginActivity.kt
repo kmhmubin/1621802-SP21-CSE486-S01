@@ -1,11 +1,12 @@
 package com.example.nsucpcadmin.ui.activities.auth
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.Button
-import com.example.nsucpcadmin.R
+import com.example.nsucpcadmin.MainActivity
+import com.example.nsucpcadmin.data.firebase.FirebaseSource
+import com.example.nsucpcadmin.data.model.AdminUser
 import com.example.nsucpcadmin.databinding.ActivityLoginBinding
 import com.example.nsucpcadmin.ui.activities.base.BaseActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -92,15 +93,34 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
             // login using FirebaseAuth
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
-                    //hide the progress bar
-                    hideProgressBar()
 
                     if (task.isSuccessful) {
-                        showSnackBar("Login Successful", false)
+                        FirebaseSource().getUserDetails(this)
                     } else {
+                        hideProgressBar()
                         showSnackBar(task.exception!!.message.toString(), true)
                     }
                 }
         }
     }
+
+    /*
+    * function to notify user that logged is success and get user details from Firestore database after auth
+     */
+
+    fun userLoggedInSuccess(user: AdminUser) {
+        // hide the progress bar
+        hideProgressBar()
+
+        // print the details in the log
+        Log.i("Name", user.name)
+        Log.i("email", user.email)
+
+
+        //  goto main activity
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
+    }
+
+
 }
