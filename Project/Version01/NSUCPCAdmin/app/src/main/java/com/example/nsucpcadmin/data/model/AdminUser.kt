@@ -4,6 +4,7 @@ data class AdminUser(
     val id: String = "",
     val name: String = "",
     val email: String = "",
+    val nsu_id: String = "",
     val image: String = "",
     val mobile: String = "",
     val gender: String = "",

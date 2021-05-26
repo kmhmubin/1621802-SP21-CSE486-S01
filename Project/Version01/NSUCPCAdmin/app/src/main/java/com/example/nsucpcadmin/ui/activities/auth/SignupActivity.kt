@@ -3,12 +3,15 @@ package com.example.nsucpcadmin.ui.activities.auth
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.nsucpcadmin.data.firebase.FirebaseSource
+import com.example.nsucpcadmin.data.model.AdminUser
 import com.example.nsucpcadmin.databinding.ActivitySignupBinding
 import com.example.nsucpcadmin.ui.activities.base.BaseActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 class SignupActivity : BaseActivity() {
 
@@ -107,19 +110,49 @@ class SignupActivity : BaseActivity() {
                             // Firebase register user
                             val firebaseUser: FirebaseUser = task.result!!.user!!
 
-                            // show the registration success message
-                            showSnackBar("Registration Successful", false)
-                            // after registration complete then logout and send to login screen
-                            FirebaseAuth.getInstance().signOut()
-                            // finish the registration screen
-                            finish()
+                            // save data into FireStore DB
+                            val user = AdminUser(
+                                firebaseUser.uid,
+                                binding.signupUserNameEditText.text.toString().trim(),
+                                binding.signupUserEmailEditText.text.toString().trim(),
+                                binding.signupUserIDEditText.text.toString().trim()
+                            )
+                            // pass the values in the constructor
+                            FirebaseSource()
+
+
                         } else {
                             // show error message
                             showSnackBar(task.exception!!.message.toString(), true)
+                            // save error in crashlytics
+                            FirebaseCrashlytics.getInstance().setCustomKey(
+                                "Registration Error",
+                                task.exception!!.message.toString()
+                            )
+                            FirebaseCrashlytics.getInstance().recordException(task.exception!!)
                         }
                     }
                 )
         }
+    }
+
+
+    /*
+    * function to notify the success result of Firestore entry
+     */
+
+    fun userRegistrationSuccess() {
+        // hide progress bar
+        hideProgressBar()
+
+        // show the registration success message
+        showSnackBar("Registration Successful", false)
+
+        // after registration complete then logout and send to login screen
+        FirebaseAuth.getInstance().signOut()
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
+
     }
 
 
