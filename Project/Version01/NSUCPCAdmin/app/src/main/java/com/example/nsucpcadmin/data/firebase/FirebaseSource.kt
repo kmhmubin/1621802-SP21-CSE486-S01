@@ -7,4 +7,10 @@ class FirebaseSource {
     private val firebaseAuth: FirebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
+
+    /*
+    * Firebase login function
+     */
+
+
 }
