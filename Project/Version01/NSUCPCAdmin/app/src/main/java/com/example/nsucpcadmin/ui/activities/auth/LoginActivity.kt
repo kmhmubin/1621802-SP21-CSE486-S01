@@ -115,7 +115,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
         hideProgressBar()
 
 
-        if (user.profileComplete == 0) {
+        if (user.profileCompleted == 0) {
             // if the user profile incomplete
             val intent = Intent(this, EditProfileActivity::class.java)
             intent.putExtra(Constants.EXTRA_USER_DETAILS, user)

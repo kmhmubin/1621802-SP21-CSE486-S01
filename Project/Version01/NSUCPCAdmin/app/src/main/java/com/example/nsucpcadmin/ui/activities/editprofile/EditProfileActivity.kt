@@ -43,7 +43,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
         }
 
         // if the profile incomplete
-        if (mUserDetails.profileComplete == 0) {
+        if (mUserDetails.profileCompleted == 0) {
             // show values in the field
 
             binding.editProfileNameEditText.isEnabled = false
@@ -236,7 +236,7 @@ class EditProfileActivity : BaseActivity(), View.OnClickListener {
             userHashMap[Constants.IMAGE] = mUserProfileImageURL
         }
 
-        if (mUserDetails.profileComplete == 0) {
+        if (mUserDetails.profileCompleted == 0) {
             userHashMap[Constants.COMPLETE_PROFILE] = 1
         }
 
