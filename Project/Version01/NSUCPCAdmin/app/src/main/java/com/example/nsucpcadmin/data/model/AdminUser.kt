@@ -8,5 +8,6 @@ data class AdminUser(
     val image: String = "",
     val mobile: String = "",
     val gender: String = "",
+    val present_address: String = "",
     val profileComplete: Int = 0
 )

@@ -46,4 +46,10 @@
     <string name="forget_password_message">Enter your email address below to rest your password</string>
     <string name="forget_password_send_button_text">Send</string>
     <string name="progressbar_please_wait">Please wait</string>
+    <string name="edit_profile_add_user_photo">Add User Profile Photo</string>
+    <string name="editProfile_enter_your_phone_number">Enter Your Phone Number</string>
+    <string name="editProfile_Gender_male">Male</string>
+    <string name="editProfile_gender_female">Female</string>
+    <string name="editProfile_save_button">Save</string>
+    <string name="editProfile_enter_your_present_address">Enter your present address</string>
 </resources>
