@@ -8,7 +8,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.nsucpcadmin.ui.fragments.home.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_createJobPostFragment"
+            app:destination="@id/createJobPostFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mailFragment"
         android:name="com.example.nsucpcadmin.ui.fragments.mail.MailFragment"
@@ -18,5 +22,31 @@
         android:id="@+id/profileFragment"
         android:name="com.example.nsucpcadmin.ui.fragments.profile.ProfileFragment"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.example.nsucpcadmin.ui.fragments.profile.UpdateProfileFragment"
+        android:label="Update Profile"
+        tools:layout="@layout/fragment_update_profile">
+        <action
+            android:id="@+id/action_updateProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/createJobPostFragment"
+        android:name="com.example.nsucpcadmin.ui.fragments.home.CreateJobPostFragment"
+        android:label="New Post"
+        tools:layout="@layout/fragment_create_job_post">
+        <action
+            android:id="@+id/action_createJobPostFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

@@ -2,16 +2,17 @@ package com.example.nsucpcadmin
 
 import android.content.Context
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.nsucpcadmin.databinding.ActivityMainBinding
+import com.example.nsucpcadmin.ui.activities.base.BaseActivity
 import com.example.nsucpcadmin.utils.Constants
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +37,9 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
+        NavigationUI.setupActionBarWithNavController(this,navController)
+
+
         // bottom navigation
         binding.bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -44,5 +48,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    override fun onBackPressed() {
+        doubleBackToExit()
     }
 }

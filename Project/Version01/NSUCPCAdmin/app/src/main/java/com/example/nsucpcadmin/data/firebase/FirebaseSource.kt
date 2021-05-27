@@ -5,10 +5,12 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.net.Uri
 import android.util.Log
+import androidx.fragment.app.Fragment
 import com.example.nsucpcadmin.data.model.AdminUser
 import com.example.nsucpcadmin.ui.activities.auth.LoginActivity
 import com.example.nsucpcadmin.ui.activities.auth.SignupActivity
 import com.example.nsucpcadmin.ui.activities.editprofile.EditProfileActivity
+import com.example.nsucpcadmin.ui.fragments.profile.ProfileFragment
 import com.example.nsucpcadmin.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.crashlytics.FirebaseCrashlytics
@@ -192,6 +194,11 @@ class FirebaseSource {
 
 
     }
+
+
+// Fragments
+
+
 
 
 }

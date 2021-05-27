@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.home.CreateJobPostFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/companyNameTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/company_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/companyNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:textColor="@color/black_800"
+                android:typeface="normal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/positionNameTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/position_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/companyNameTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/positionNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:textColor="@color/black_800"
+                android:typeface="normal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/jobTypeTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/job_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/positionNameTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/jobTypeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:textColor="@color/black_800"
+                android:typeface="normal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/salaryTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/salary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jobTypeTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/salaryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:inputType="numberDecimal"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:textColor="@color/black_800"
+                android:typeface="normal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/jobDescriptionTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/job_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/salaryTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/jobDescriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:inputType="textMultiLine"
+                android:minLines="2"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:textColor="@color/black_800"
+                android:typeface="normal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/applicationDateTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/application_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jobDescriptionTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/applicationDateEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="false"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:inputType="date"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:textColor="@color/black_800"
+                android:typeface="normal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/applicationDatePickerButton"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:icon="@drawable/ic_calender"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/applicationDateTextLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/applicationDateTextLayout"
+            app:layout_constraintTop_toTopOf="@+id/applicationDateTextLayout" />
+
+        <TextView
+            android:id="@+id/recruiterEmailText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:text="@string/recruiter_email"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            android:textColor="@color/black_800"
+            android:typeface="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/applicationDateTextLayout" />
+
+        <CheckBox
+            android:id="@+id/checkBoxGoesToCPC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:buttonTint="@color/green_500"
+            android:checked="true"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:text="@string/goes_to_cpc"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            android:textColor="@color/black_800"
+            android:typeface="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recruiterEmailText" />
+
+        <CheckBox
+            android:id="@+id/checkBoxGoesToCompany"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:buttonTint="@color/green_500"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:text="@string/goes_to_company"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            android:textColor="@color/black_800"
+            android:typeface="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/checkBoxGoesToCPC" />
+
+        <Button
+            android:id="@+id/companyLogoButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:text="@string/company_logo"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            android:textColor="@color/black_800"
+            app:icon="@drawable/ic_upload"
+            app:iconGravity="textStart"
+            app:iconTint="@color/blue_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxGoesToCompany" />
+
+        <Button
+            android:id="@+id/postButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:text="@string/post"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Button"
+            android:textColor="@color/black_800"
+            android:typeface="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/companyLogoButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

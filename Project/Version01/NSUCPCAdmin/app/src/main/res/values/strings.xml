@@ -52,4 +52,15 @@
     <string name="editProfile_gender_female">Female</string>
     <string name="editProfile_save_button">Save</string>
     <string name="editProfile_enter_your_present_address">Enter your present address</string>
+    <string name="company_name">Company Name</string>
+    <string name="position_name">Position Name</string>
+    <string name="job_type">Job Type</string>
+    <string name="salary">Salary</string>
+    <string name="job_description">Job description</string>
+    <string name="application_date">Application Date</string>
+    <string name="recruiter_email">Recruiter Email</string>
+    <string name="goes_to_cpc">Goes to CPC</string>
+    <string name="goes_to_company">Goes to company</string>
+    <string name="company_logo">Company Logo</string>
+    <string name="post">Post</string>
 </resources>

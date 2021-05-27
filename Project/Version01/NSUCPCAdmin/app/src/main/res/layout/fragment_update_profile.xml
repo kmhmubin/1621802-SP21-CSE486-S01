@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.profile.UpdateProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/updateProfile_user_photo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="@dimen/profile_user_photo_margin"
+            android:layout_marginTop="32dp"
+            android:background="@color/green_200"
+            android:contentDescription="@string/edit_profile_add_user_photo"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_profile_avater"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view7" />
+
+        <View
+            android:id="@+id/view7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/user_image_background" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updateProfileNameTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/signup_enter_your_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updateProfile_user_photo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateProfileNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:textColor="@color/gray_80" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updateProfileEmailTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/signup_nsu_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updateProfileNameTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateProfileEmailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:textColor="@color/gray_80" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updateProfileIDTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/signup_nsu_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updateProfileEmailTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateProfileIDEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:textColor="@color/gray_80" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updateProfilePhoneTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/editProfile_enter_your_phone_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updateProfileIDTextLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateProfilePhoneEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:textColor="@color/gray_80" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/updateProfileGenderRadioButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/profile_radio_button_height"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updateProfilePhoneTextLayout">
+
+            <RadioButton
+                android:id="@+id/radioButtonMale"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/profile_radio_button_marginStartEnd"
+                android:layout_weight="1"
+                android:background="@drawable/gender_tab_selector"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/editProfile_Gender_male"
+                android:textColor="@drawable/gender_tab_selector_text"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioButtonFemale"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/profile_radio_button_marginStartEnd"
+                android:layout_weight="1"
+                android:background="@drawable/gender_tab_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/editProfile_gender_female"
+                android:textColor="@drawable/gender_tab_selector_text"
+                android:textStyle="bold" />
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/updateProfileAddressTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/editProfile_enter_your_present_address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updateProfileGenderRadioButton">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateProfileAddressEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:inputType="text"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+                android:textColor="@color/gray_80" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/updateProfile_save_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:text="@string/editProfile_save_button"
+            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Button"
+            android:textColor="@color/black_900"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updateProfileAddressTextLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
